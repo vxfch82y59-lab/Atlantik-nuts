@@ -1,56 +1,61 @@
-import Navbar from "./Navbar";
-import HeroSlider from "./HeroSlider"
+import Navbar from "./navbar";
+import HeroSlider from "./HeroSlider";
 
 export default function Home() {
-  const slides = [
-      {
-            image: "/slider/1.webp",
-                  captionTitle: "Innovative Products",
-                        captionText: "Cutting-edge technology for modern life."
-                            },
-                                {
-                                      image: "/slider/2.webp",
-                                            captionTitle: "Quality & Performance",
-                                                  captionText: "Engineered for durability and excellence."
-                                                      },
-                                                          {
-                                                                image: "/slider/3.webp",
-                                                                      captionTitle: "Smart & Stylish",
-                                                                            captionText: "Design that fits your lifestyle."
-                                                                                }
-                                                                                  ];
+  return (
+      <div className="home">
+            {/* Navbar */}
+                  <Navbar />
 
-                                                                                    return (
-                                                                                        <>
-                                                                                            <div className="w-full h-full flex flex-col items-center">
+                        {/* Slider */}
+                              <div style={{ marginTop: "60px" }}>
+                                      <HeroSlider />
+                                            </div>
 
-                                                                                                {/* HERO SLIDER */}
-                                                                                                    <div className="w-full max-w-7xl mt-4">
-                                                                                                          <HeroSlider />
-                                                                                                              </div>
+                                                  {/* İçerik Bölümü */}
+                                                        <section
+                                                                style={{
+                                                                          padding: "60px 20px",
+                                                                                    maxWidth: "1100px",
+                                                                                              margin: "0 auto",
+                                                                                                        textAlign: "center"
+                                                                                                                }}
+                                                                                                                      >
+                                                                                                                              <h1
+                                                                                                                                        style={{
+                                                                                                                                                    fontSize: "2.5rem",
+                                                                                                                                                                fontWeight: "700",
+                                                                                                                                                                            marginBottom: "20px",
+                                                                                                                                                                                      }}
+                                                                                                                                                                                              >
+                                                                                                                                                                                                        Atlantik Nuts — Global Kalite Standartları
+                                                                                                                                                                                                                </h1>
 
-                                                                                                                  {/* ALT KISIM — Geçici içerik */}
-                                                                                                                      <div className="w-full max-w-7xl px-4 py-12 text-center">
-                                                                                                                            <h2 className="text-3xl font-semibold mb-4">Atlantik Nuts</h2>
-                                                                                                                                  <p className="text-gray-600 text-lg">
-                                                                                                                                          Premium Ceviz & Kuru Yemiş Tedarikçisi — 17 Yıllık Tecrübe
-                                                                                                                                                </p>
-                                                                                                                                                    </div>
+                                                                                                                                                                                                                        <p
+                                                                                                                                                                                                                                  style={{
+                                                                                                                                                                                                                                              fontSize: "1.2rem",
+                                                                                                                                                                                                                                                          lineHeight: "1.7",
+                                                                                                                                                                                                                                                                      color: "#555",
+                                                                                                                                                                                                                                                                                }}
+                                                                                                                                                                                                                                                                                        >
+                                                                                                                                                                                                                                                                                                  17 yıllık tecrübemizle ceviz, kuru meyve ve doğal ürünleri dünyanın dört bir yanına ihraç ediyoruz.
+                                                                                                                                                                                                                                                                                                            Üretimden paketlemeye kadar her adımda kalite, hijyen ve sürdürülebilirlik önceliğimizdir.
+                                                                                                                                                                                                                                                                                                                    </p>
+                                                                                                                                                                                                                                                                                                                          </section>
 
-                                                                                                                                                      </div>
-                                                                                                                                                      );
-                                                                                        )
-                                                                                              <HeroSlider slides={slides} />
-
-                                                                                                    <div className="page-content">
-                                                                                                            <h1>Hoş Geldiniz</h1>
-                                                                                                                    <p>Buraya kendi içeriklerinizi ekleyebilirsiniz.</p>
-
-                                                                                                                            {/* Örneğin ürün listeleme veya tanıtım kutuları */}
-                                                                                                                                    <div style={{ marginTop: "40px" }}>
-                                                                                                                                              <p>Diğer sayfa bileşenleri buraya gelecek.</p>
-                                                                                                                                                      </div>
-                                                                                                                                                            </div>
-                                                                                                                                                                </>
-                                                                                                                                                                  );
-                                                                                                                                                                  }
+                                                                                                                                                                                                                                                                                                                                {/* Footer */}
+                                                                                                                                                                                                                                                                                                                                      <footer
+                                                                                                                                                                                                                                                                                                                                              style={{
+                                                                                                                                                                                                                                                                                                                                                        background: "#111",
+                                                                                                                                                                                                                                                                                                                                                                  color: "#fff",
+                                                                                                                                                                                                                                                                                                                                                                            padding: "40px 20px",
+                                                                                                                                                                                                                                                                                                                                                                                      textAlign: "center",
+                                                                                                                                                                                                                                                                                                                                                                                                marginTop: "40px",
+                                                                                                                                                                                                                                                                                                                                                                                                        }}
+                                                                                                                                                                                                                                                                                                                                                                                                              >
+                                                                                                                                                                                                                                                                                                                                                                                                                      <p style={{ marginBottom: "6px" }}>© 2025 Atlantik Nuts</p>
+                                                                                                                                                                                                                                                                                                                                                                                                                              <p style={{ opacity: 0.6 }}>Tüm hakları saklıdır</p>
+                                                                                                                                                                                                                                                                                                                                                                                                                                    </footer>
+                                                                                                                                                                                                                                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                          );
+                                                                                                                                                                                                                                                                                                                                                                                                                                          }
