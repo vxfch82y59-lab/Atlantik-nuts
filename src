@@ -1,6 +1,10 @@
-app.jsx
-home.jsx
-navbar.jsx
-HeroSlider.jsx
-HeroSlider.css
-main.jsx
+├─ src
+│  ├─ App.jsx
+│  ├─ main.jsx
+│  ├─ home.jsx
+│  ├─ navbar.jsx
+│  ├─ HeroSlider.jsx
+│  ├─ HeroSlider.css
+│  └─ (resimler)
+├─ index.html
+├─ package.json
