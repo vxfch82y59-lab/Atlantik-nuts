@@ -6,161 +6,187 @@
 <title>Hakkımızda – Atlantik Nuts</title>
 
 <style>
-  body { margin:0; padding:0; font-family:Arial; background:#fff; overflow-x:hidden; }
+  body {
+      margin:0; padding:0; font-family:Arial;
+          background:#fff; overflow-x:hidden;
+            }
 
-    /* HEADER */
-      header {
-          position:fixed; top:0; left:0; width:100%; height:70px;
-              display:flex; align-items:center; justify-content:center;
-                  backdrop-filter:blur(15px); z-index:1000;
-                    }
+              /* HEADER – glass blur premium */
+                header {
+                    position:fixed; top:0; left:0; width:100%; height:75px;
+                        display:flex; align-items:center; justify-content:center;
+                            backdrop-filter:blur(25px); background:rgba(255,255,255,0.55);
+                                border-bottom:1px solid rgba(255,255,255,0.4);
+                                    z-index:1000;
+                                      }
 
-                      .hamburger {
-                          position:absolute; left:20px; font-size:30px; cursor:pointer;
-                            }
+                                        .hamburger {
+                                            position:absolute; left:25px;
+                                                font-size:33px; cursor:pointer;
+                                                  }
 
-                              .logo { font-size:22px; font-weight:bold; }
-
-                                /* SIDE MENU */
-                                  .side-menu {
-                                      position:fixed; top:0; left:-300px; width:260px; height:100%;
-                                          background:#fff; box-shadow:3px 0 20px rgba(0,0,0,0.15);
-                                              padding:30px; transition:0.45s ease; z-index:2000;
-                                                }
-
-                                                  .side-menu.open { left:0; }
-                                                    .side-menu a {
-                                                        display:block; margin:15px 0; font-size:18px;
-                                                            text-decoration:none; color:#333;
+                                                    .logo {
+                                                        font-size:24px; font-weight:bold;
+                                                            letter-spacing:1px;
                                                               }
 
-                                                                .lang-box button {
-                                                                    margin-right:10px; padding:6px 12px; border:1px solid #ccc; background:#eee;
-                                                                        border-radius:8px; cursor:pointer;
-                                                                          }
+                                                                /* SIDE MENU */
+                                                                  .side-menu {
+                                                                      position:fixed; top:0; left:-280px; width:260px; height:100%;
+                                                                          background:#ffffffd9; backdrop-filter:blur(10px);
+                                                                              box-shadow:3px 0 20px rgba(0,0,0,0.10);
+                                                                                  padding:35px; transition:0.45s cubic-bezier(.4,0,.2,1);
+                                                                                      z-index:2000;
+                                                                                        }
 
-                                                                            /* PAGE HERO */
-                                                                              .page-hero {
-                                                                                  width:100%; height:60vh;
-                                                                                      background:url('IMG_6861.jpeg') center/cover no-repeat;
-                                                                                          display:flex; align-items:center; justify-content:center;
-                                                                                              color:#fff; font-size:42px; font-weight:bold;
-                                                                                                  text-shadow:0 4px 12px rgba(0,0,0,0.5);
-                                                                                                    }
+                                                                                          .side-menu.open { left:0; }
 
-                                                                                                      /* CONTENT */
-                                                                                                        .container {
-                                                                                                            width:90%; max-width:1200px; margin:80px auto; padding-top:40px;
-                                                                                                              }
+                                                                                            .side-menu a {
+                                                                                                display:block; margin:18px 0; font-size:19px;
+                                                                                                    text-decoration:none; color:#222; font-weight:500;
+                                                                                                        padding-bottom:4px; border-bottom:1px solid #eee;
+                                                                                                          }
 
-                                                                                                                .section {
-                                                                                                                    opacity:0; transform:translateY(30px);
-                                                                                                                        transition:0.8s ease;
-                                                                                                                            margin-bottom:70px;
+                                                                                                            .lang-box button {
+                                                                                                                margin-right:8px; margin-top:20px;
+                                                                                                                    padding:6px 12px; border:1px solid #ccc;
+                                                                                                                        background:#f3f3f3; border-radius:8px; cursor:pointer;
+                                                                                                                            transition:.3s;
                                                                                                                               }
+                                                                                                                                .lang-box button:hover { background:white; }
 
-                                                                                                                                .section.show {
-                                                                                                                                    opacity:1; transform:translateY(0);
-                                                                                                                                      }
+                                                                                                                                  /* HERO */
+                                                                                                                                    .page-hero {
+                                                                                                                                        width:100%; height:60vh;
+                                                                                                                                            background:url('IMG_6861.jpeg') center/cover no-repeat;
+                                                                                                                                                display:flex; align-items:center; justify-content:center;
+                                                                                                                                                    color:#fff; font-size:46px; font-weight:bold;
+                                                                                                                                                        text-shadow:0 4px 12px rgba(0,0,0,0.4);
+                                                                                                                                                            margin-top:75px;
+                                                                                                                                                                animation:fadeHero 1.4s ease forwards;
+                                                                                                                                                                  }
 
-                                                                                                                                        .section img {
-                                                                                                                                            width:100%; border-radius:12px;
-                                                                                                                                                box-shadow:0 8px 25px rgba(0,0,0,0.2);
-                                                                                                                                                  }
+                                                                                                                                                                    @keyframes fadeHero {
+                                                                                                                                                                        from { opacity:0; transform:scale(1.02); }
+                                                                                                                                                                            to { opacity:1; transform:scale(1); }
+                                                                                                                                                                              }
 
-                                                                                                                                                    h2 { font-size:32px; margin-bottom:15px; }
+                                                                                                                                                                                /* CONTENT */
+                                                                                                                                                                                  .container {
+                                                                                                                                                                                      width:90%; max-width:1200px; margin:0 auto;
+                                                                                                                                                                                          padding-top:60px; padding-bottom:60px;
+                                                                                                                                                                                            }
 
-                                                                                                                                                      p {
-                                                                                                                                                          font-size:18px; line-height:1.7; color:#444;
-                                                                                                                                                            }
-                                                                                                                                                            </style>
-                                                                                                                                                            </head>
+                                                                                                                                                                                              .section {
+                                                                                                                                                                                                  opacity:0; transform:translateY(40px);
+                                                                                                                                                                                                      transition:0.85s cubic-bezier(.4,0,.2,1);
+                                                                                                                                                                                                          margin-bottom:70px;
+                                                                                                                                                                                                            }
 
-                                                                                                                                                            <body>
+                                                                                                                                                                                                              .section.show {
+                                                                                                                                                                                                                  opacity:1; transform:translateY(0);
+                                                                                                                                                                                                                    }
 
-                                                                                                                                                            <header>
-                                                                                                                                                              <div class="hamburger" onclick="toggleMenu()">☰</div>
-                                                                                                                                                                <div class="logo">LOGO</div>
-                                                                                                                                                                </header>
+                                                                                                                                                                                                                      .section img {
+                                                                                                                                                                                                                          width:100%; border-radius:22px;
+                                                                                                                                                                                                                              box-shadow:0 16px 40px rgba(0,0,0,0.22);
+                                                                                                                                                                                                                                }
 
-                                                                                                                                                                <!-- MENU -->
-                                                                                                                                                                <div class="side-menu" id="menu">
-                                                                                                                                                                  <a href="index.html">Ana Sayfa</a>
-                                                                                                                                                                    <a href="hakkimizda.html">Hakkımızda</a>
-                                                                                                                                                                      <a href="urunler.html">Ürünler</a>
-                                                                                                                                                                        <a href="hizmetler.html">Hizmetler</a>
-                                                                                                                                                                          <a href="projeler.html">Projeler</a>
-                                                                                                                                                                            <a href="sertifikalar.html">Sertifikalar</a>
-                                                                                                                                                                              <a href="iletisim.html">İletişim</a>
+                                                                                                                                                                                                                                  h2 { 
+                                                                                                                                                                                                                                      font-size:33px; margin-bottom:15px;
+                                                                                                                                                                                                                                          font-weight:700; color:#222;
+                                                                                                                                                                                                                                            }
 
-                                                                                                                                                                                <div class="lang-box">
-                                                                                                                                                                                    <button onclick="setLang('tr')">TR</button>
-                                                                                                                                                                                        <button onclick="setLang('en')">EN</button>
-                                                                                                                                                                                            <button onclick="setLang('es')">ES</button>
-                                                                                                                                                                                                <button onclick="setLang('ar')">AR</button>
-                                                                                                                                                                                                  </div>
-                                                                                                                                                                                                  </div>
+                                                                                                                                                                                                                                              p {
+                                                                                                                                                                                                                                                  font-size:19px; line-height:1.75;
+                                                                                                                                                                                                                                                      color:#444;
+                                                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                                                        </style>
+                                                                                                                                                                                                                                                        </head>
 
-                                                                                                                                                                                                  <!-- PAGE HERO -->
-                                                                                                                                                                                                  <div class="page-hero">Hakkımızda</div>
+                                                                                                                                                                                                                                                        <body>
 
-                                                                                                                                                                                                  <div class="container">
+                                                                                                                                                                                                                                                        <header>
+                                                                                                                                                                                                                                                          <div class="hamburger" onclick="toggleMenu()">☰</div>
+                                                                                                                                                                                                                                                            <div class="logo">ATLANTIK NUTS</div>
+                                                                                                                                                                                                                                                            </header>
 
-                                                                                                                                                                                                    <div class="section">
-                                                                                                                                                                                                        <h2>Atlantik Nuts Kimdir?</h2>
-                                                                                                                                                                                                            <p>
-                                                                                                                                                                                                                  Atlantik Nuts, uluslararası standartlarda üretim yapan, kalite
-                                                                                                                                                                                                                        ve mühendisliğin en üst seviyede uygulandığı bir gıda tesisidir.
-                                                                                                                                                                                                                              Yılların deneyimi, modern makineler ve yüksek kalite kontrolü ile
-                                                                                                                                                                                                                                    global pazarda yer almaktadır.
-                                                                                                                                                                                                                                        </p>
-                                                                                                                                                                                                                                          </div>
+                                                                                                                                                                                                                                                            <!-- MENU -->
+                                                                                                                                                                                                                                                            <div class="side-menu" id="menu">
+                                                                                                                                                                                                                                                              <a href="index.html">Ana Sayfa</a>
+                                                                                                                                                                                                                                                                <a href="hakkimizda.html">Hakkımızda</a>
+                                                                                                                                                                                                                                                                  <a href="urunler.html">Ürünler</a>
+                                                                                                                                                                                                                                                                    <a href="hizmetler.html">Hizmetler</a>
+                                                                                                                                                                                                                                                                      <a href="projeler.html">Projeler</a>
+                                                                                                                                                                                                                                                                        <a href="sertifikalar.html">Sertifikalar</a>
+                                                                                                                                                                                                                                                                          <a href="iletisim.html">İletişim</a>
 
-                                                                                                                                                                                                                                            <div class="section">
-                                                                                                                                                                                                                                                <img src="4c760838-ea15-4a7c-b938-0b6523eaebea.jpeg">
-                                                                                                                                                                                                                                                  </div>
+                                                                                                                                                                                                                                                                            <div class="lang-box">
+                                                                                                                                                                                                                                                                                <button onclick="setLang('tr')">TR</button>
+                                                                                                                                                                                                                                                                                    <button onclick="setLang('en')">EN</button>
+                                                                                                                                                                                                                                                                                        <button onclick="setLang('es')">ES</button>
+                                                                                                                                                                                                                                                                                            <button onclick="setLang('ar')">AR</button>
+                                                                                                                                                                                                                                                                                              </div>
+                                                                                                                                                                                                                                                                                              </div>
 
-                                                                                                                                                                                                                                                    <div class="section">
-                                                                                                                                                                                                                                                        <h2>Misyonumuz</h2>
-                                                                                                                                                                                                                                                            <p>
-                                                                                                                                                                                                                                                                  Müşterilerimize en kaliteli kuru yemiş ürünlerini sağlamak,
-                                                                                                                                                                                                                                                                        inovasyon ve teknoloji ile üretimde mükemmelliği sürdürmek.
-                                                                                                                                                                                                                                                                            </p>
-                                                                                                                                                                                                                                                                              </div>
+                                                                                                                                                                                                                                                                                              <!-- HERO -->
+                                                                                                                                                                                                                                                                                              <div class="page-hero">Hakkımızda</div>
 
-                                                                                                                                                                                                                                                                                <div class="section">
-                                                                                                                                                                                                                                                                                    <img src="91f836db-1a93-42da-a6bf-d6214f15e3e9.jpeg">
-                                                                                                                                                                                                                                                                                      </div>
+                                                                                                                                                                                                                                                                                              <div class="container">
 
-                                                                                                                                                                                                                                                                                      </div>
+                                                                                                                                                                                                                                                                                                <div class="section">
+                                                                                                                                                                                                                                                                                                    <h2>Atlantik Nuts Kimdir?</h2>
+                                                                                                                                                                                                                                                                                                        <p>
+                                                                                                                                                                                                                                                                                                              Atlantik Nuts, uluslararası standartlarda üretim yapan ileri teknoloji 
+                                                                                                                                                                                                                                                                                                                    bir gıda tesisidir. Modern hatlar, mühendislik temelli üretim sistemi ve 
+                                                                                                                                                                                                                                                                                                                          yüksek kalite kontrol süreçleri ile global pazarda güçlü bir konuma sahiptir.
+                                                                                                                                                                                                                                                                                                                              </p>
+                                                                                                                                                                                                                                                                                                                                </div>
 
-                                                                                                                                                                                                                                                                                      <script>
-                                                                                                                                                                                                                                                                                      function toggleMenu() {
-                                                                                                                                                                                                                                                                                        document.getElementById("menu").classList.toggle("open");
-                                                                                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                                                                                                                                  <div class="section">
+                                                                                                                                                                                                                                                                                                                                      <img src="4c760838-ea15-4a7c-b938-0b6523eaebea.jpeg">
+                                                                                                                                                                                                                                                                                                                                        </div>
 
-                                                                                                                                                                                                                                                                                        function setLang(lang){
-                                                                                                                                                                                                                                                                                          localStorage.setItem("lang",lang);
-                                                                                                                                                                                                                                                                                            alert("Dil değiştirildi: " + lang);
-                                                                                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                                                                                                                                          <div class="section">
+                                                                                                                                                                                                                                                                                                                                              <h2>Misyonumuz</h2>
+                                                                                                                                                                                                                                                                                                                                                  <p>
+                                                                                                                                                                                                                                                                                                                                                        Müşterilerimize en üst seviyede kalite ve güven sunmak; 
+                                                                                                                                                                                                                                                                                                                                                              inovasyon ve mühendislik ile üretimde sürekli gelişimi sağlamak.
+                                                                                                                                                                                                                                                                                                                                                                  </p>
+                                                                                                                                                                                                                                                                                                                                                                    </div>
 
-                                                                                                                                                                                                                                                                                            /* SCROLL ANIMATION */
-                                                                                                                                                                                                                                                                                            const sections = document.querySelectorAll('.section');
+                                                                                                                                                                                                                                                                                                                                                                      <div class="section">
+                                                                                                                                                                                                                                                                                                                                                                          <img src="91f836db-1a93-42da-a6bf-d6214f15e3e9.jpeg">
+                                                                                                                                                                                                                                                                                                                                                                            </div>
 
-                                                                                                                                                                                                                                                                                            function reveal(){
-                                                                                                                                                                                                                                                                                              let trigger = window.innerHeight * 0.85;
+                                                                                                                                                                                                                                                                                                                                                                            </div>
 
-                                                                                                                                                                                                                                                                                                sections.forEach(sec=>{
-                                                                                                                                                                                                                                                                                                    let top = sec.getBoundingClientRect().top;
-                                                                                                                                                                                                                                                                                                        if(top < trigger){
-                                                                                                                                                                                                                                                                                                              sec.classList.add("show");
-                                                                                                                                                                                                                                                                                                                  }
-                                                                                                                                                                                                                                                                                                                    });
-                                                                                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                                                                                                                                            <script>
+                                                                                                                                                                                                                                                                                                                                                                            function toggleMenu() {
+                                                                                                                                                                                                                                                                                                                                                                              document.getElementById("menu").classList.toggle("open");
+                                                                                                                                                                                                                                                                                                                                                                              }
 
-                                                                                                                                                                                                                                                                                                                    window.addEventListener("scroll", reveal);
-                                                                                                                                                                                                                                                                                                                    reveal();
-                                                                                                                                                                                                                                                                                                                    </script>
+                                                                                                                                                                                                                                                                                                                                                                              function setLang(lang){
+                                                                                                                                                                                                                                                                                                                                                                                localStorage.setItem("lang",lang);
+                                                                                                                                                                                                                                                                                                                                                                                }
 
-                                                                                                                                                                                                                                                                                                                    </body>
-                                                                                                                                                                                                                                                                                                                    </html>
+                                                                                                                                                                                                                                                                                                                                                                                /* ADVANCED SCROLL ANIMATION */
+                                                                                                                                                                                                                                                                                                                                                                                const sections = document.querySelectorAll('.section');
+
+                                                                                                                                                                                                                                                                                                                                                                                function reveal(){
+                                                                                                                                                                                                                                                                                                                                                                                  let trigger = window.innerHeight * 0.85;
+
+                                                                                                                                                                                                                                                                                                                                                                                    sections.forEach(sec=>{
+                                                                                                                                                                                                                                                                                                                                                                                        let top = sec.getBoundingClientRect().top;
+                                                                                                                                                                                                                                                                                                                                                                                            if(top < trigger){
+                                                                                                                                                                                                                                                                                                                                                                                                  sec.classList.add("show");
+                                                                                                                                                                                                                                                                                                                                                                                                      }
+                                                                                                                                                                                                                                                                                                                                                                                                        });
+                                                                                                                                                                                                                                                                                                                                                                                                        }
+
+                                                                                                                                                                                                                                                                                                                                                                                                        window.addEventListener("scroll", reveal);
+                                                                                                                                                                                                                                                                                                                                                                                                        reveal();
+                                                                                                                                                                                                                                                                                                                                                                                                        </script>
+
+                                                                                                                                                                                                                                                                                                                                                                                                        </body>
+                                                                                                                                                                                                                                                                                                                                                                                                        </html>
