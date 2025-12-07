@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ürünler – Atlantik Nuts</title>
+
+<style>
+  body { margin:0; padding:0; font-family:Arial; background:#fff; overflow-x:hidden; }
+
+    /* HEADER */
+      header {
+          position:fixed; top:0; left:0; width:100%; height:70px;
+              display:flex; align-items:center; justify-content:center;
+                  backdrop-filter:blur(15px); z-index:1000;
+                    }
+
+                      .hamburger {
+                          position:absolute; left:20px; font-size:30px; cursor:pointer;
+                            }
+
+                              .logo { font-size:22px; font-weight:bold; }
+
+                                /* MENU */
+                                  .side-menu {
+                                      position:fixed; top:0; left:-300px; width:260px; height:100%;
+                                          background:#fff; box-shadow:3px 0 20px rgba(0,0,0,0.15);
+                                              padding:30px; transition:0.45s ease; z-index:2000;
+                                                }
+
+                                                  .side-menu.open { left:0; }
+                                                    .side-menu a {
+                                                        display:block; margin:15px 0; font-size:18px;
+                                                            text-decoration:none; color:#333;
+                                                              }
+
+                                                                .lang-box button {
+                                                                    margin-right:10px; padding:6px 12px; border:1px solid #ccc; background:#eee;
+                                                                        border-radius:8px; cursor:pointer;
+                                                                          }
+
+                                                                            /* HERO */
+                                                                              .page-hero {
+                                                                                  width:100%; height:60vh;
+                                                                                      background:url('e4cea842-c5b2-4b5a-b2fe-82fe9610f753.jpeg') center/cover no-repeat;
+                                                                                          display:flex; align-items:center; justify-content:center;
+                                                                                              color:#fff; font-size:42px; font-weight:bold;
+                                                                                                  text-shadow:0 4px 12px rgba(0,0,0,0.5);
+                                                                                                    }
+
+                                                                                                      /* GRID */
+                                                                                                        .container {
+                                                                                                            width:90%; max-width:1300px; margin:80px auto; padding-top:40px;
+                                                                                                              }
+
+                                                                                                                .grid {
+                                                                                                                    display:grid;
+                                                                                                                        grid-template-columns:repeat(auto-fit, minmax(270px, 1fr));
+                                                                                                                            gap:40px;
+                                                                                                                              }
+
+                                                                                                                                .product-card {
+                                                                                                                                    text-align:center;
+                                                                                                                                        opacity:0; transform:translateY(30px);
+                                                                                                                                            transition:0.8s;
+                                                                                                                                              }
+
+                                                                                                                                                .product-card.show {
+                                                                                                                                                    opacity:1; transform:translateY(0);
+                                                                                                                                                      }
+
+                                                                                                                                                        .circle-img {
+                                                                                                                                                            width:220px; height:220px; border-radius:50%;
+                                                                                                                                                                margin:auto; overflow:hidden;
+                                                                                                                                                                    box-shadow:0 8px 30px rgba(0,0,0,0.25);
+                                                                                                                                                                        transition:0.4s ease;
+                                                                                                                                                                          }
+
+                                                                                                                                                                            .circle-img img {
+                                                                                                                                                                                width:100%; height:100%; object-fit:cover;
+                                                                                                                                                                                    transition:0.5s ease;
+                                                                                                                                                                                      }
+
+                                                                                                                                                                                        .product-card:hover .circle-img {
+                                                                                                                                                                                            transform:scale(1.08);
+                                                                                                                                                                                                filter:brightness(1.1);
+                                                                                                                                                                                                  }
+
+                                                                                                                                                                                                    h3 {
+                                                                                                                                                                                                        margin-top:20px; font-size:22px; color:#333;
+                                                                                                                                                                                                          }
+                                                                                                                                                                                                          </style>
+                                                                                                                                                                                                          </head>
+
+                                                                                                                                                                                                          <body>
+
+                                                                                                                                                                                                          <header>
+                                                                                                                                                                                                            <div class="hamburger" onclick="toggleMenu()">☰</div>
+                                                                                                                                                                                                              <div class="logo">LOGO</div>
+                                                                                                                                                                                                              </header>
+
+                                                                                                                                                                                                              <!-- MENU -->
+                                                                                                                                                                                                              <div class="side-menu" id="menu">
+                                                                                                                                                                                                                <a href="index.html">Ana Sayfa</a>
+                                                                                                                                                                                                                  <a href="hakkimizda.html">Hakkımızda</a>
+                                                                                                                                                                                                                    <a href="urunler.html">Ürünler</a>
+                                                                                                                                                                                                                      <a href="hizmetler.html">Hizmetler</a>
+                                                                                                                                                                                                                        <a href="projeler.html">Projeler</a>
+                                                                                                                                                                                                                          <a href="sertifikalar.html">Sertifikalar</a>
+                                                                                                                                                                                                                            <a href="iletisim.html">İletişim</a>
+
+                                                                                                                                                                                                                              <div class="lang-box">
+                                                                                                                                                                                                                                  <button onclick="setLang('tr')">TR</button>
+                                                                                                                                                                                                                                      <button onclick="setLang('en')">EN</button>
+                                                                                                                                                                                                                                          <button onclick="setLang('es')">ES</button>
+                                                                                                                                                                                                                                              <button onclick="setLang('ar')">AR</button>
+                                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                                                </div>
+
+                                                                                                                                                                                                                                                <!-- HERO -->
+                                                                                                                                                                                                                                                <div class="page-hero">Ürünler</div>
+
+                                                                                                                                                                                                                                                <div class="container">
+                                                                                                                                                                                                                                                  <div class="grid">
+
+                                                                                                                                                                                                                                                      <div class="product-card">
+                                                                                                                                                                                                                                                            <div class="circle-img">
+                                                                                                                                                                                                                                                                    <img src="e4cea842-c5b2-4b5a-b2fe-82fe9610f753.jpeg">
+                                                                                                                                                                                                                                                                          </div>
+                                                                                                                                                                                                                                                                                <h3>Kavrulmuş Fındık</h3>
+                                                                                                                                                                                                                                                                                    </div>
+
+                                                                                                                                                                                                                                                                                        <div class="product-card">
+                                                                                                                                                                                                                                                                                              <div class="circle-img">
+                                                                                                                                                                                                                                                                                                      <img src="4c760838-ea15-4a7c-b938-0b6523eaebea.jpeg">
+                                                                                                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                                                                                                                  <h3>Çiğ Fındık</h3>
+                                                                                                                                                                                                                                                                                                                      </div>
+
+                                                                                                                                                                                                                                                                                                                          <div class="product-card">
+                                                                                                                                                                                                                                                                                                                                <div class="circle-img">
+                                                                                                                                                                                                                                                                                                                                        <img src="91f836db-1a93-42da-a6bf-d6214f15e3e9.jpeg">
+                                                                                                                                                                                                                                                                                                                                              </div>
+                                                                                                                                                                                                                                                                                                                                                    <h3>Badem</h3>
+                                                                                                                                                                                                                                                                                                                                                        </div>
+
+                                                                                                                                                                                                                                                                                                                                                            <div class="product-card">
+                                                                                                                                                                                                                                                                                                                                                                  <div class="circle-img">
+                                                                                                                                                                                                                                                                                                                                                                          <img src="9e51887c-24fb-4752-aa4a-30bcb28ab5b7.jpeg">
+                                                                                                                                                                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                                                                                                                                                                                      <h3>Karışık Kuruyemiş</h3>
+                                                                                                                                                                                                                                                                                                                                                                                          </div>
+
+                                                                                                                                                                                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                                                                                                                                                                                            </div>
+
+                                                                                                                                                                                                                                                                                                                                                                                            <script>
+                                                                                                                                                                                                                                                                                                                                                                                            function toggleMenu() {
+                                                                                                                                                                                                                                                                                                                                                                                              document.getElementById("menu").classList.toggle("open");
+                                                                                                                                                                                                                                                                                                                                                                                              }
+
+                                                                                                                                                                                                                                                                                                                                                                                              function setLang(lang){
+                                                                                                                                                                                                                                                                                                                                                                                                localStorage.setItem("lang", lang);
+                                                                                                                                                                                                                                                                                                                                                                                                  alert("Dil değiştirildi: " + lang);
+                                                                                                                                                                                                                                                                                                                                                                                                  }
+
+                                                                                                                                                                                                                                                                                                                                                                                                  /* Scroll Reveal */
+                                                                                                                                                                                                                                                                                                                                                                                                  const cards = document.querySelectorAll('.product-card');
+
+                                                                                                                                                                                                                                                                                                                                                                                                  function reveal(){
+                                                                                                                                                                                                                                                                                                                                                                                                    let trigger = window.innerHeight * 0.85;
+
+                                                                                                                                                                                                                                                                                                                                                                                                      cards.forEach(c=>{
+                                                                                                                                                                                                                                                                                                                                                                                                          let top = c.getBoundingClientRect().top;
+                                                                                                                                                                                                                                                                                                                                                                                                              if(top < trigger){
+                                                                                                                                                                                                                                                                                                                                                                                                                    c.classList.add("show");
+                                                                                                                                                                                                                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                                                                                                                                                                                                                          });
+                                                                                                                                                                                                                                                                                                                                                                                                                          }
+
+                                                                                                                                                                                                                                                                                                                                                                                                                          window.addEventListener("scroll", reveal);
+                                                                                                                                                                                                                                                                                                                                                                                                                          reveal();
+                                                                                                                                                                                                                                                                                                                                                                                                                          </script>
+
+                                                                                                                                                                                                                                                                                                                                                                                                                          </body>
+                                                                                                                                                                                                                                                                                                                                                                                                                          </html>
