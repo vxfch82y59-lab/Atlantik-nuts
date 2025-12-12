@@ -57,827 +57,6 @@
         nav{display:none;gap:16px}
         nav a{text-decoration:none;color:var(--header-footer-color);font-weight:600;transition:opacity .2s;}
         nav a:hover{opacity:0.8;}
-        
-        /* MASAÜSTÜ DİL SEÇİMİ BUTONLARI İÇİN STİL (YENİ) */
-        .lang-desktop{
-            display: none; /* Mobil'de gizli */
-            position: absolute;
-            right: 18px;
-            gap: 5px;
-            align-items: center;
-        }
-        .lang-desktop button{
-            padding: 4px 8px;
-            background: transparent;
-            border: 1px solid #ffffff33;
-            border-radius: 4px;
-            color: #fff;
-            cursor: pointer;
-            font-size: 13px;
-            transition: background .2s, border-color .2s;
-        }
-        .lang-desktop button.sel{
-            background: var(--accent);
-            border-color: var(--accent);
-        }
-
-        /* OFFCANVAS (Mobil Menü) */
-        .off{position:fixed;inset:0;pointer-events:none;z-index:60}
-        .off.show{pointer-events:auto}
-        .bg{position:absolute;inset:0;background:#0006;opacity:0;transition:opacity .28s}
-        .off.show .bg{opacity:1}
-        .panel{position:fixed;left:0;top:0;bottom:0;width:320px;max-width:85%;background:var(--header-footer-bg);color:#fff;padding:80px 22px;transform:translateX(-100%);transition:transform .32s}
-        .off.show .panel{transform:none}
-        .panel a{color:#fff;text-decoration:none;padding:12px 0;display:block;border-bottom:1px solid #ffffff22}
-        .langs button{margin-top:10px;width:100%;padding:8px;background:transparent;border:1px solid #ffffff33;border-radius:6px;color:#fff;cursor:pointer;transition:background .2s;}
-        .langs button.sel{background:var(--accent);border-color:var(--accent);}
-        
-        /* MOBİL MENÜ BAŞLIĞINA LOGO EKLEME */
-        #offTitle::before {
-             content: '\1F333'; 
-            color: var(--accent); 
-            font-size: 24px;
-            margin-right: 8px;
-            display: inline-block;
-            vertical-align: middle;
-        }
-
-        /* HERO */
-        .hero{
-            height:calc(100vh - 64px); 
-            max-height: 700px; 
-            display:flex;
-            align-items:center;
-            position:relative;
-            margin-top:64px;
-            overflow:hidden;
-            background-image: var(--hero-image-url); 
-            background-size: cover;
-            background-position: center;
-            border-bottom-left-radius: 18px; 
-            border-bottom-right-radius: 18px;
-            box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.4); 
-        }
-        
-        .hero-content {
-            display: block !important; 
-            z-index: 10;
-            color: #fff;
-            text-align: center;
-            max-width: 600px;
-            margin: 0 auto;
-            padding-top: 50px; 
-        }
-
-        .hero-content h1 {
-            font-size: 48px;
-            font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 8px;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
-            opacity: 0; 
-        }
-        
-        .hero-content p {
-            font-size: 20px;
-            font-weight: 400;
-            margin-bottom: 30px;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
-            opacity: 0; 
-        }
-        
-        /* Hero Butonları */
-        .hero-buttons a {
-            text-decoration: none;
-            color: #fff;
-            background: var(--accent);
-            padding: 12px 25px;
-            border-radius: 8px;
-            font-weight: 700;
-            margin: 0 10px;
-            transition: background 0.3s, transform 0.2s;
-            display: inline-block;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-            opacity: 0; 
-        }
-        .hero-buttons a:hover {
-            background: #256a2f; 
-            transform: translateY(-2px);
-        }
-
-        /* CONTENT */
-        .section{padding:80px 0;text-align:center;}
-        .title{font-size:36px;margin-bottom:12px;color:var(--header-footer-bg);font-weight:800;}
-        .lead{color:#455;margin-bottom:40px;max-width:800px;margin-left:auto;margin-right:auto;padding:0;border-radius:0;}
-        .grid{display:grid;gap:25px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin-top:20px;text-align:left;}
-        
-        /* ABOUT (Hakkımızda Giriş Metni) */
-        #about-intro .container {
-            border-radius: 0; 
-            padding: 0 18px; 
-            background: transparent; 
-            box-shadow: none; 
-        }
-        #about-intro .lead {
-             color: var(--header-footer-bg); 
-             margin-bottom: 20px; 
-             line-height: 1.6;
-             font-size: 16px;
-        }
-        #about-intro {
-            padding: 40px 0 80px 0; 
-        }
-        #about-intro .title {
-            color: var(--header-footer-bg); /* DEĞİŞTİ: var(--accent) yerine --header-footer-bg kullanıldı */
-            font-size: 30px;
-        }
-
-        /* SERVICES (Hizmetler) - GÜNCELLENMİŞ STİL */
-        #services .card {
-            background: transparent; 
-            backdrop-filter: none;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: none;
-            border: none;
-            opacity: 0;
-            transform: translateX(-50px); 
-            text-align: center;
-            /* Servis Kartlarını Daha Büyük Yapmak İçin */
-            min-height: 380px; /* Minimum yükseklik eklendi */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-        }
-        /* Tüm Servis Görselleri için Ortak Stil */
-        #services .card img {
-            width: 100%; 
-            max-width: 280px; /* Görselleri büyütme */
-            height: auto; 
-            border-radius: 8px; 
-            margin-bottom: 15px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Hafif gölge eklendi */
-        }
-        
-        /* Service 2'nin (Lojistik) özel arkaplansız ve gölgesiz stili korunuyor */
-        .service2_card {
-            background: transparent !important; 
-            box-shadow: none !important; 
-            border: none; 
-            transform: translateX(-50px) scale(1.0); 
-        }
-        .service2_card img {
-            box-shadow: none !important; 
-        }
-        
-        /* DİJİTAL İZLENEBİLİRLİK (Service 4) ve SÜRDÜRÜLEBİLİR TARIM (About) için YENİ GÖRSEL KAPSAYICI STİLİ */
-        .sustain-img, .service-img-container {
-            width: 100%; 
-            height: 260px; /* Yüksekliği sabitlemek için */
-            border-radius: 8px; 
-            background-size: cover; 
-            background-position: center;
-            margin-bottom: 15px;
-            box-shadow: 0 4px 10px #00000033;
-            border: 5px solid #fff;
-            margin-left: auto;
-            margin-right: auto;
-            overflow: hidden; 
-        }
-
-        #services .card h4 {
-            color: var(--header-footer-bg); 
-            font-size: 20px;
-            margin-bottom: 10px;
-        }
-
-        /* PRODUCTS (Ürünler) */
-        #products .card {
-            background: transparent; 
-            backdrop-filter: none;
-            padding: 25px;
-            border-radius: 16px;
-            box-shadow: none;
-            opacity: 0;
-            transform: translateY(30px);
-            text-align: left;
-        }
-        
-        /* YUVARLAK GÖRSEL ALANI (ÜRÜN GÖRSELİ) */
-        .circle{
-            width:280px; /* Ürün görsellerini de büyütme */
-            height:280px; /* Ürün görsellerini de büyütme */
-            border-radius:50%;
-            background-size:cover; 
-            background-position:center;
-            margin-bottom:15px;
-            box-shadow:0 4px 10px #00000033;
-            border:5px solid #fff; 
-            margin-left:auto;
-            margin-right:auto;
-            overflow: hidden; 
-        }
-
-        /* Ürün Adı, Kalibre ve Açıklama Stilleri */
-        .card h4, .card span {font-weight:700; color:var(--header-footer-bg); display:block; margin-bottom: 8px;}
-        .card p {font-size: 14px; line-height: 1.6; color:#555;}
-        .card h5 {font-size:16px; margin-top:10px; color:var(--accent);}
-        
-        /* CONTACT SECTION STYLING */
-        #contact {background:var(--header-footer-bg); color:#fff; padding:60px 0;}
-        #contact .title {color:#fff;}
-        #contact .grid {margin-top:40px;}
-        
-        /* İletişim Bilgileri */
-        .contact-info .card {background:transparent; color:#fff; padding:0; border:0; box-shadow: none; opacity: 1; transform: none;}
-        .contact-info p {color:#eee; margin-bottom:12px; display:flex; align-items:center; gap:8px;}
-        .contact-info p strong {color:var(--accent);}
-
-        /* İKONLAR (Unicode) */
-        .contact-info p:nth-child(1)::before {content:'\260E'; font-size:16px; color:var(--accent);} 
-        .contact-info p:nth-child(2)::before {content:'\1F4DE'; font-size:16px; color:#25D366; margin-top:-2px;} 
-        .contact-info p:nth-child(3)::before {content:'\2709'; font-size:16px; color:var(--accent);} 
-        .contact-info p:nth-child(4)::before {content:'\1F30E'; font-size:16px; color:var(--accent);} 
-
-        /* FOOTER */
-        footer{
-            text-align:center;padding:18px 0;
-            background:var(--header-footer-bg);
-            color:#aaa;
-            font-size:14px;
-        }
-
-        /* DESKTOP (900px ve üzeri) */
-        @media(min-width:900px){
-            nav{display:flex;position:relative; right:unset;} /* Navigasyonu ortadan sağa kaydırdık, dil seçimi için yer açtık */
-            #hamb{display:none}
-            .hero{max-height: 800px; border-radius: 0;}
-            .hero-content h1 {font-size: 60px;}
-            .section{padding:100px 0;}
-            
-            /* MASAÜSTÜ DİL SEÇİMİ GÖRÜNÜR OLSUN (YENİ) */
-            .lang-desktop{display: flex;} 
-            
-            /* Sürdürülebilir tarım ve Dijital İzlenebilirlik görsellerini masaüstünde kare yapmak (260x260) */
-            #about .card .sustain-img,
-            #services .card .service-img-container {
-                width: 260px; 
-                height: 260px;
-                border-radius: 8px; 
-            }
-            /* Ürün görsellerini masaüstünde kare yapmak (280x280) */
-            .circle{
-                 width:280px; 
-                 height:280px; 
-            }
-        }
-        /* Arapça (RTL) Düzeltmeler */
-        [dir="rtl"] #hamb{left:unset; right:18px;}
-        [dir="rtl"] .lang-desktop{right:unset; left:18px;} /* RTL'de dil seçimi sola gider */
-        [dir="rtl"] nav{right:unset; left:calc(18px + 170px); position: absolute;} /* RTL'de navigasyonu kaydırdık */
-        [dir="rtl"] .panel{left:unset; right:0; transform:translateX(100%);}
-        [dir="rtl"] .off.show .panel{transform:none}
-        [dir="rtl"] .brand::before {margin-right: unset; margin-left: 8px;}
-        [dir="rtl"] #offTitle::before {margin-right: unset; margin-left: 8px;}
-        [dir="rtl"] .card h4, [dir="rtl"] .card span {text-align: right;}
-        [dir="rtl"] .card p {text-align: right;}
-        [dir="rtl"] .card h5 {text-align: right;}
-        [dir="rtl"] #services .card {transform: translateX(50px);}
-    </style>
-</head>
-<body>
-<header>
-    <div class="h-inner container">
-        <button id="hamb" aria-label="Açılır menü">☰</button>
-        <div class="brand">ATLANTIC NUTS</div>
-        
-        <nav id="deskNav">
-            <a data-lang="home" href="#home" onclick="go('home')"></a>
-            <a data-lang="about" href="#about-intro" onclick="go('about-intro')"></a>
-            <a data-lang="services" href="#services" onclick="go('services')"></a>
-            <a data-lang="products" href="#products" onclick="go('products')"></a>
-            <a data-lang="contact" href="#contact" onclick="go('contact')"></a>
-        </nav>
-        
-        <div class="lang-desktop" id="desktopLangs">
-             <button data-lang-code="tr">TR</button>
-             <button data-lang-code="en">EN</button>
-             <button data-lang-code="es">ES</button>
-             <button data-lang-code="ar">AR</button>
-        </div>
-    </div>
-</header>
-
-<div class="off" id="off">
-    <div class="bg" id="bg"></div>
-    <aside class="panel" role="dialog" aria-modal="true" aria-labelledby="offTitle">
-        <h3 id="offTitle" style="color:#fff;margin:0 0 18px; border-bottom:1px solid #ffffff22; padding-bottom:12px;">ATLANTIC NUTS</h3>
-        <a data-lang="home" onclick="go('home')" href="#home"></a>
-        <a data-lang="about" onclick="go('about-intro')" href="#about-intro"></a>
-        <a data-lang="services" onclick="go('services')" href="#services"></a> 
-        <a data-lang="products" onclick="go('products')" href="#products"></a>
-        <a data-lang="contact" onclick="go('contact')" href="#contact"></a>
-        
-        <div class="langs" style="margin-top:24px; padding-top:12px; border-top:1px solid #ffffff22;">
-            <button data-lang-code="tr">Türkçe</button>
-            <button data-lang-code="en">English</button>
-            <button data-lang-code="es">Español</button>
-            <button data-lang-code="ar">العربية</button>
-        </div>
-    </aside>
-</div>
-
-<section id="home" class="hero">
-    <div class="container hero-content">
-        <h1 data-lang="hero_title"></h1>
-        <p data-lang="hero_sub"></p>
-        <div class="hero-buttons">
-            <a data-lang="view_products" onclick="go('products')" href="#products" class="hero-reveal"></a>
-            <a data-lang="get_quote" onclick="go('contact')" href="#contact" class="hero-reveal"></a>
-        </div>
-    </div>
-</section>
-
-<section id="about-intro" class="section">
-    <div class="container">
-        <h2 class="title" data-lang="about_title"></h2>
-        <p class="lead" data-lang="about_text"></p>
-    </div>
-</section>
-
-<section id="services" class="section">
-    <div class="container">
-        <h2 class="title" data-lang="services_title"></h2>
-        <p class="lead" data-lang="services_text"></p>
-        <div class="grid">
-            
-            <div class="card reveal-side" data-delay="0.1">
-                <img src="https://raw.githubusercontent.com/vxfch82y59-lab/Atlantik-nuts/refs/heads/main/1765332830761.jpg" alt="Üstün Kalite Kontrolü" style="width:100%; max-width: 280px; height:auto; border-radius:8px; margin-bottom:10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-                <h4 data-lang="service1_title"></h4>
-                <p data-lang="service1_desc"></p>
-            </div>
-
-            <div class="card reveal-side service2_card" data-delay="0.2">
-                <img src="https://raw.githubusercontent.com/vxfch82y59-lab/Atlantik-nuts/refs/heads/main/1000003189-removebg-preview.png" alt="Hızlı ve Güvenilir Lojistik" style="width:100%; max-width: 280px; height:auto; border-radius:8px; margin-bottom:10px; box-shadow: none;">
-                <h4 data-lang="service2_title"></h4>
-                <p data-lang="service2_desc"></p>
-            </div>
-
-            <div class="card reveal-side" data-delay="0.3">
-                <img src="https://raw.githubusercontent.com/vxfch82y59-lab/Atlantik-nuts/refs/heads/main/1765331681257.jpg" alt="Müşteri Odaklı Tedarik ve Destek" style="width:100%; max-width: 280px; height:auto; border-radius:8px; margin-bottom:10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-                <h4 data-lang="service3_title"></h4>
-                <p data-lang="service3_desc"></p>
-            </div>
-            
-            <div class="card reveal-side" data-delay="0.4">
-                <div class="service-img-container" style="background-image:url('https://raw.githubusercontent.com/vxfch82y59-lab/Atlantik-nuts/refs/heads/main/1765420512952%7E2.jpg');"></div>
-                <h4 data-lang="service4_title"></h4>
-                <p data-lang="service4_desc"></p>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<section id="about" class="section">
-    <div class="container">
-        <div class="grid">
-            
-            <div class="card reveal">
-                 <div class="sustain-img" style="background-image:url('https://raw.githubusercontent.com/vxfch82y59-lab/Atlantik-nuts/refs/heads/main/IMG-20251209-WA0010.jpg')"></div>
-                <h4 data-lang="sustain"></h4>
-                <p data-lang="s_desc"></p>
-            </div>
-            </div>
-    </div>
-</section>
-
-<section id="products" class="section">
-    <div class="container">
-        <h2 class="title" data-lang="products_title"></h2>
-        <p class="lead" data-lang="products_text"></p>
-        <div class="grid">
-
-            <div class="card reveal">
-                <div class="circle" style="background-image:url('https://raw.githubusercontent.com/vxfch82y59-lab/Atlantik-nuts/refs/heads/main/IMG-20251209-WA0013.jpg')"></div>
-                <h4 data-lang="p1_name"></h4> 
-                <h5 data-lang="p1_caliber"></h5> 
-                <p data-lang="p1_desc"></p>
-            </div>
-
-            <div class="card reveal">
-                <div class="circle" style="background-image:url('https://raw.githubusercontent.com/vxfch82y59-lab/Atlantik-nuts/refs/heads/main/Screenshot_20251210_215111_Photos.jpg')"></div>
-                <h4 data-lang="p2_name"></h4>
-                 <h5 data-lang="p2_caliber"></h5>
-                <p data-lang="p2_desc"></p>
-            </div>
-
-            <div class="card reveal">
-                <div class="circle" style="background-image:url('https://raw.githubusercontent.com/vxfch82y59-lab/Atlantik-nuts/refs/heads/main/IMG-20251209-WA0002.jpg')"></div>
-                <h4 data-lang="p3_name"></h4>
-                 <h5 data-lang="p3_caliber"></h5>
-                <p data-lang="p3_desc"></p>
-            </div>
-
-            <div class="card reveal">
-                <div class="circle" style="background-image:url('https://raw.githubusercontent.com/vxfch82y59-lab/Atlantik-nuts/refs/heads/main/IMG_6861.jpeg')"></div>
-                <h4 data-lang="p4_name"></h4>
-                 <h5 data-lang="p4_caliber"></h5>
-                <p data-lang="p4_desc"></p>
-            </div>
-
-            <div class="card reveal">
-                <div class="circle" style="background-image:url('https://raw.githubusercontent.com/vxfch82y59-lab/Atlantik-nuts/refs/heads/main/Screenshot_20251210_135512_Gallery.jpg')"></div>
-                <h4 data-lang="p5_name"></h4>
-                 <h5 data-lang="p5_caliber"></h5>
-                <p data-lang="p5_desc"></p>
-            </div>
-            
-            <div class="card reveal">
-                <div class="circle" style="background-image:url('https://raw.githubusercontent.com/vxfch82y59-lab/Atlantik-nuts/refs/heads/main/71AvTfOBMBc4IstjrzEFq9NiISuWSJcQCIiy3WB5.jpg')"></div>
-                <h4 data-lang="p6_name"></h4>
-                 <h5 data-lang="p6_caliber"></h5>
-                <p data-lang="p6_desc"></p>
-            </div>
-
-            <div class="card reveal">
-                <div class="circle" style="background-image:url('https://raw.githubusercontent.com/vxfch82y59-lab/Atlantik-nuts/refs/heads/main/Screenshot_20251210_215148_Photos.jpg')"></div>
-                <h4 data-lang="p7_name"></h4>
-                 <h5 data-lang="p7_caliber"></h5>
-                <p data-lang="p7_desc"></p>
-            </div>
-            
-        </div>
-    </div>
-</section>
-
-<section id="contact" class="section">
-    <div class="container">
-        <h2 class="title" data-lang="contact_title"></h2>
-        <div class="grid">
-            <div class="card reveal contact-info">
-                <p><strong data-lang="phone"></strong> +56 9 1234 689</p>
-                <p><strong data-lang="whatsapp"></strong> +56 9 1234 689</p>
-                <p><strong data-lang="email"></strong> ask@atlantiknuts.com</p>
-                <p><strong data-lang="location"></strong> Vitacura, Santiago, Chile</p>
-            </div>
-             <div class="card reveal">
-                <h4 data-lang="quote"></h4>
-                <p data-lang="reply"></p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<footer>
-    © <span id="year"></span> Atlantic Nuts
-</footer>
-
-<script>
-    /* Yılın Otomatik Olarak Güncellenmesi */
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    /* MENU open/close (toggle) */
-    const off = document.getElementById('off');
-    const hamb = document.getElementById('hamb');
-    const bg = document.getElementById('bg');
-
-    function toggleMenu(){
-        off.classList.toggle('show');
-        // Menü açıkken sayfanın kaymasını engelle
-        document.documentElement.style.overflow = off.classList.contains('show') ? 'hidden' : '';
-    }
-    hamb.addEventListener('click', toggleMenu);
-    // Arka plana tıklama veya ESC tuşu ile menüyü kapatma
-    bg.addEventListener('click', ()=>{ off.classList.remove('show'); document.documentElement.style.overflow=''; });
-    window.addEventListener('keydown', e=>{ if(e.key === 'Escape') { off.classList.remove('show'); document.documentElement.style.overflow=''; } });
-
-    /* REVEAL (GSAP ScrollTrigger ile animasyon) */
-    function initReveal(){
-        if(typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined'){
-            gsap.registerPlugin(ScrollTrigger);
-            
-            // Hero Yazıları Animasyonu
-            gsap.fromTo('.hero-content h1', {opacity:0, y:-20}, {opacity:1, y:0, duration: 1.2, ease: 'power3.out', delay: 0.3});
-            gsap.fromTo('.hero-content p', {opacity:0, y:20}, {opacity:1, y:0, duration: 1.2, ease: 'power3.out', delay: 0.5});
-            gsap.fromTo('.hero-buttons a', {opacity:0, scale: 0.8}, {opacity:1, scale: 1, duration: 0.8, ease: 'back.out(1.7)', stagger: 0.1, delay: 0.8});
-
-            // Kart Animasyonları (Alttan Geliş)
-            gsap.utils.toArray('.reveal').forEach(el=>{
-                gsap.fromTo(el, {opacity:0, y:50}, {
-                    opacity:1, 
-                    y:0, 
-                    duration:1.0, 
-                    ease:'power3.out', 
-                    scrollTrigger:{ trigger:el, start:'top 90%' }
-                });
-            });
-            
-            // Yandan Gelişli Kart Animasyonları (Hizmetler)
-            gsap.utils.toArray('.reveal-side').forEach(el=>{
-                const isRTL = document.documentElement.dir === 'rtl';
-                const startX = isRTL ? 50 : -50;
-                const delay = parseFloat(el.getAttribute('data-delay') || 0);
-
-                gsap.fromTo(el, {opacity:0, x:startX}, {
-                    opacity:1, 
-                    x:0, 
-                    duration:1.0, 
-                    delay: delay, 
-                    ease:'power3.out', 
-                    scrollTrigger:{ trigger:el, start:'top 90%' }
-                });
-            });
-            
-        } else {
-            // GSAP/ScrollTrigger yoksa basit görünürlük takibi (fallback)
-            const io = new IntersectionObserver((entries, o)=>{
-                entries.forEach(en=>{ 
-                    if(en.isIntersecting){ 
-                        en.target.style.opacity = '1';
-                        en.target.style.transform = 'translateY(0) translateX(0)';
-                        en.target.style.transition = 'opacity 1s, transform 1s'; 
-                        o.unobserve(en.target); 
-                    }
-                });
-            }, {threshold: .12});
-            document.querySelectorAll('.reveal, .reveal-side, .hero-content h1, .hero-content p, .hero-buttons a').forEach(el=>io.observe(el));
-            document.querySelectorAll('.hero-content h1, .hero-content p, .hero-buttons a').forEach(el=>{
-                el.style.opacity = '0';
-            });
-        }
-    }
-    window.addEventListener('load', initReveal);
-
-    /* SMOOTH SCROLL helper (Navigasyon ve düğmeler için) */
-    function go(id){
-        const el = document.getElementById(id);
-        if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
-        // Sadece mobil menü açıkken menüyü kapat
-        if(window.innerWidth < 900 && off.classList.contains('show')) { 
-            off.classList.remove('show'); 
-            document.documentElement.style.overflow=''; 
-        }
-    }
-
-    /* SIMPLE I18N - TÜM DİLLER VE ÜRÜN DETAYLARI BURADA */
-    const translations = {
-        tr:{
-            home:"Ana Sayfa",services:"Hizmetler",about:"Hakkımızda",products:"Ürünler",contact:"İletişim",whatsapp:"Whatsapp:",location:"Konum:",
-            hero_title:"ATLANTIC NUTS", 
-            hero_sub:"En İyi Hizmet, En İyi Kaliteli Ürün, Her yıl Boyunca!", 
-            view_products:"Ürünleri İncele",get_quote:"Teklif Al",
-            
-            services_title:"Hizmetlerimiz ve Kalite Standartlarımız",
-            services_text:"Global müşterilerimize en taze ve en kaliteli ürünleri sunarken, güvenilir tedarik ve lojistik çözümlerimizle de yanınızdayız.",
-            service1_title:"Üstün Kalite Kontrolü",
-            service1_desc:"Her parti ürün, uluslararası standartlarda (HACCP, ISO vb.) titizlikle test edilir ve yalnızca en iyileri sevk edilir. Kalite taahhüdümüz birincil önceliğimizdir.",
-            service2_title:"Hızlı ve Güvenilir Lojistik",
-            service2_desc:"Dünya çapında geniş lojistik ağımız sayesinde, ürünlerinizi hasat tazeliğinde ve tam zamanında kapınıza ulaştırıyoruz. Soğuk zincir güvencesi.",
-            service3_title:"Müşteri Odaklı Tedarik",
-            service3_desc:"Büyük ve küçük hacimli siparişler için esnek çözümler sunarız. Müşteri ihtiyaçlarına özel paketleme ve etiketleme seçenekleriyle tam destek.",
-            service4_title:"Dijital İzlenebilirlik",
-            service4_desc:"Çiftlikten yükleme limanına kadar tüm tedarik zincirini dijital olarak takip edebilme imkanı. Şeffaflık ve güvenlik garantisi.",
-
-            about_title:"Hakkımızda",
-            about_text:"Sürdürülebilir tarım yaklaşımını benimseyen firmamız, Şili’nin Orta Vadisi’nde 15 yılı aşkın süredir kuru ve yaş meyve üretimi gerçekleştirmektedir. Ceviz, badem, şeftali, elma, avokado, kivi, üzüm, kuru üzüm ve çeşitli kuru meyveler başta olmak üzere geniş bir ürün yelpazesini modern yöntemlerle yetiştiriyor ve işliyoruz. Bölgenin doğal verimliliği, uygun iklim koşulları ve uzman ekibimizin titiz çalışması sayesinde ürünlerimizi güvenilir bir kalite standardıyla dünya pazarına sunuyoruz. Çevreyi koruyan üretim anlayışımız doğrultusunda İyi Tarım Uygulamaları (BPA) prensiplerine uygun çalışıyor; gıda güvenliğini en üst seviyede tutmak için uluslararası standartları titizlikle uyguluyoruz. Üretimimizin her aşamasında kalite, sürdürülebilirlik ve güvenilirlik temel değerlerimizdir.",
-            sustain:"Sürdürülebilir Tarım", 
-            s_desc:"Çevreyi koruyan ve etik üretim prensiplerine uygun çalışarak, geleceğe daha yeşil bir miras bırakmayı hedefliyoruz.",
-            
-            products_title:"Premium Kuruyemiş, Kuru ve Taze Meyve Portföyü",
-            products_text:"Yüksek kalite, üstün lezzet ve uluslararası kalibre garantisiyle sunduğumuz, Şili'nin en seçkin hasat ürünleri. Portföyümüz kuruyemişlerin yanı sıra taze (yaş) meyveleri de kapsamaktadır.",
-            
-            p1_name:"Chandler Ceviz (Kabuklu)",p1_caliber:"Kalibre: 32mm+",p1_desc:"Açıklama: Açık renkli içe ve ince kabuğa sahip, en popüler ticari çeşit.",
-            p2_name:"Serr Ceviz (Kabuklu)",p2_caliber:"Kalibre: 30-34mm",p2_desc:"Açıklama: Yüksek yağ oranlı, derin lezzetli ve dayanıklı kabuklu ceviz.",
-            p3_name:"Royal Gala Elma",p3_caliber:"Kalibre: 150-175 adet/kutu",p3_desc:"Açıklama: Tatlı, sulu ve canlı kırmızı-sarı renkli, taze tüketim için ideal.",
-            p4_name:"Autumn Royal Kuru Üzüm",p4_caliber:"Kalibre: Jumbo",p4_desc:"Açıklama: Büyük taneli, koyu renkli ve tatlı, doğal olarak kurutulmuş üzüm.",
-            p5_name:"Zafiro Kuru Üzüm",p5_caliber:"Kalibre: Large",p5_desc:"Açıklama: Daha az tatlı ve yumuşak dokulu, çok yönlü kullanıma uygun çekirdeksiz üzüm.",
-            p6_name:"Şili Bademi (İç)",p6_caliber:"Kalibre: 18/20",p6_desc:"Açıklama: Yüksek proteinli, bütün ve yarım formlarda sunulan üstün kalitede badem içi.",
-            p7_name:"Şili Kirazı (Taze)",p7_caliber:"Kalibre: J (26-28mm)",p7_desc:"Açıklama: Koyu kırmızı, sert ve gevrek dokulu, taze ihracat için özel olarak yetiştirilmiştir.",
-            
-            contact_title:"Bizimle İletişime Geçin",phone:"Telefon:",email:"E-posta:",
-            quote:"Teklif İste",reply:"Global tedarik zincirimiz hakkında bilgi almak ve özel teklifleriniz için bize ulaşın. Ekibimiz 24 saat içinde size dönüş yapacaktır."
-        },
-        en:{
-            home:"Home",services:"Services",about:"About Us",products:"Products",contact:"Contact",whatsapp:"Whatsapp:",location:"Location:",
-            hero_title:"Atlantic Nuts",hero_sub:"Premium Nuts and Fruits — Global Supply",
-            view_products:"View Products",get_quote:"Get Quote",
-            
-            services_title:"Our Services and Quality Standards",
-            services_text:"While providing the freshest and highest quality products to our global customers, we also support you with our reliable supply and logistics solutions.",
-            service1_title:"Superior Quality Control",
-            service1_desc:"Every batch is rigorously tested according to international standards (HACCP, ISO, etc.) and only the best are shipped. Our commitment to quality is our primary priority.",
-            service2_title:"Fast and Reliable Logistics",
-            service2_desc:"Thanks to our extensive global logistics network, we deliver your products to your door with harvest freshness and on time. Cold chain assurance.",
-            service3_title:"Customer-Centric Supply",
-            service3_desc:"We offer flexible solutions for large and small volume orders. Full support with custom packaging and labeling options tailored to customer needs.",
-            service4_title:"Digital Traceability",
-            service4_desc:"The ability to digitally track the entire supply chain from the farm to the loading port. Guarantee of transparency and security.",
-            
-            about_title:"About Us",
-            about_text:"Adopting a sustainable agriculture approach, our company has been producing dried and fresh fruits in Chile's Central Valley for over 15 years. We cultivate and process a wide range of products using modern methods, including walnuts, almonds, peaches, apples, avocados, kiwis, grapes, raisins, and various dried fruits. Thanks to the region's natural fertility, favorable climate conditions, and the meticulous work of our expert team, we offer our products to the global market with a reliable quality standard. In line with our environmentally conscious production philosophy, we comply with Good Agricultural Practices (GAP) principles and rigorously apply international standards to maintain the highest level of food safety. Quality, sustainability, and reliability are our core values at every stage of production.",
-            sustain:"Sustainable Agriculture",
-            s_desc:"We aim to leave a greener legacy for the future by protecting the environment and adhering to ethical production principles.",
-            
-            products_title:"Premium Nut, Dried, and Fresh Fruit Portfolio",
-            products_text:"Our selected range of Chilean harvest products, offered with the guarantee of high quality, superior taste, and international caliber. Our portfolio includes fresh (non-dried) fruits in addition to nuts.",
-
-            p1_name:"Chandler Walnut (In Shell)",p1_caliber:"Caliber: 32mm+",p1_desc:"Description: The most popular commercial variety with a light-colored kernel and thin shell.",
-            p2_name:"Serr Walnut (In Shell)",p2_caliber:"Caliber: 30-34mm",p2_desc:"Description: High oil content, deep flavor, and durable shelled walnut.",
-            p3_name:"Royal Gala Apple",p3_caliber:"Caliber: 150-175 units/box",p3_desc:"Description: Sweet, juicy, and vibrant red-yellow color, ideal for fresh consumption.",
-            p4_name:"Autumn Royal Raisin",p4_caliber:"Caliber: Jumbo",p4_desc:"Description: Large-seeded, dark-colored, and sweet, naturally sun-dried raisin.",
-            p5_name:"Zafiro Raisin",p5_caliber:"Caliber: Large",p5_desc:"Description: Less sweet and softer textured, versatile seedless raisin.",
-            p6_name:"Chilean Almond (Kernel)",p6_caliber:"Caliber: 18/20",p6_desc:"Description: High-protein, superior quality almond kernel offered in whole and half forms.",
-            p7_name:"Chilean Cherry (Fresh)",p7_caliber:"Caliber: J (26-28mm)",p7_desc:"Description: Dark red, firm, and crisp texture, specially grown for fresh export.",
-
-            contact_title:"Get in Touch with Us",phone:"Phone:",email:"Email:",
-            quote:"Request Offer",reply:"Contact us for information about our global supply chain and for your special offers. Our team will get back to you within 24 hours."
-        },
-        es:{
-            home:"Inicio",services:"Servicios",about:"Sobre Nosotros",products:"Productos",contact:"Contacto",whatsapp:"Whatsapp:",location:"Ubicación:",
-            hero_title:"Atlantic Nuts",hero_sub:"Frutos Secos y Frutas Premium — Suministro Global",
-            view_products:"Ver Productos",get_quote:"Solicitar Oferta",
-            
-            services_title:"Nuestros Servicios y Estándares de Calidad",
-            services_text:"Mientras proporcionamos los productos más frescos y de la más alta calidad a nuestros clientes globales, también los apoyamos con nuestras soluciones confiables de suministro y logística.",
-            service1_title:"Control de Calidad Superior",
-            service1_desc:"Cada lote se prueba rigurosamente según los estándares internacionales (HACCP, ISO, etc.) y solo se envía lo mejor. Nuestro compromiso con la calidad es nuestra principal prioridad.",
-            service2_title:"Logística Rápida y Confiable",
-            service2_desc:"Gracias a nuestra amplia red de logística global, entregamos sus productos en su puerta con la frescura de la cosecha y a tiempo. Garantía de cadena de frío.",
-            service3_title:"Suministro Centrado en el Cliente",
-            service3_desc:"Ofrecemos soluciones flexibles para pedidos de gran y pequeño volumen. Soporte completo con opciones de empaque y etiquetado personalizadas adaptadas a las necesidades del cliente.",
-            service4_title:"Trazabilidad Digital",
-            service4_desc:"La capacidad de rastrear digitalmente toda la cadena de suministro desde la granja hasta el puerto de carga. Garantía de transparencia y seguridad.",
-
-            about_title:"Sobre Nosotros",
-            about_text:"Adoptando un enfoque de agricultura sostenible, nuestra empresa ha estado produciendo frutas secas y frescas en el Valle Central de Chile durante más de 15 años. Cultivamos y procesamos una amplia gama de productos con métodos modernos, incluyendo nueces, almendras, duraznos, manzanas, aguacates, kiwis, uvas, pasas y diversas frutas secas. Gracias a la fertilidad natural de la región, las condiciones climáticas favorables y el trabajo meticuloso de nuestro equipo experto, ofrecemos nuestros productos al mercado global con un estándar de calidad confiable. En línea con nuestra filosofía de producción consciente del medio ambiente, cumplimos con los principios de Buenas Prácticas Agrícolas (BPA) y aplicamos rigurosamente los estándares internacionales para mantener el más alto nivel de seguridad alimentaria. Calidad, sostenibilidad y fiabilidad son nuestros valores fundamentales en cada etapa de la producción.",
-            sustain:"Agricultura Sostenible",
-            s_desc:"Nuestro objetivo es dejar un legado más verde para el futuro protegiendo el medio ambiente y adhiriéndonos a principios de producción éticos.",
-
-            products_title:"Portafolio Premium de Nueces, Frutos Secos y Frutas Frescas",
-            products_text:"Nuestra seleccionada gama de productos de cosecha chilena, ofrecidos con la garantía de alta calidad, sabor superior y calibre internacional. Nuestro portafolio incluye frutas frescas (no secas) además de frutos secos.",
-
-            p1_name:"Nuez Chandler (con Cáscara)",p1_caliber:"Calibre: 32mm+",p1_desc:"Descripción: La variedad comercial más popular con una nuez de color claro y cáscara fina.",
-            p2_name:"Nuez Serr (con Cáscara)",p2_caliber:"Calibre: 30-34mm",p2_desc:"Descripción: Nuez con alto contenido de aceite, sabor profundo y cáscara resistente.",
-            p3_name:"Manzana Royal Gala",p3_caliber:"Calibre: 150-175 unidades/caja",p3_desc:"Descripción: Dulce, jugosa y de color rojo-amarillo vibrante, ideal para el consumo fresco.",
-            p4_name:"Uva Pasa Autumn Royal",p4_caliber:"Calibre: Jumbo",p4_desc:"Descripción: Uva pasa de semilla grande, color oscuro y dulce, secada naturalmente al sol.",
-            p5_name:"Uva Pasa Zafiro",p5_caliber:"Calibre: Large",p5_desc:"Descripción: Uva pasa sin semillas, menos dulce y de textura más suave, apta para un uso versátil.",
-            p6_name:"Almendra Chilena (Pelada)",p6_caliber:"Calibre: 18/20",p6_desc:"Descripción: Almendra pelada de calidad superior y alta en proteínas, ofrecida en formas enteras y mitades.",
-            p7_name:"Cereza Chilena (Fresca)",p7_caliber:"Calibre: J (26-28mm)",p7_desc:"Descripción: Cereza de color rojo oscuro, textura firme y crujiente, cultivada especialmente para la exportación fresca.",
-
-            contact_title:"Póngase en Contacto con Nosotros",phone:"Teléfono:",email:"Correo:",
-            quote:"Solicitar Oferta",reply:"Contáctenos para obtener información sobre nuestra cadena de suministro global y para sus ofertas especiales. Nuestro equipo le responderá en 24 horas."
-        },
-        ar:{
-            home:"الرئيسية",services:"خدماتنا",about:"من نحن",products:"المنتجات",contact:"اتصال",whatsapp:"واتساب:",location:"الموقع:",
-            hero_title:"أتلانتيك ناتس",hero_sub:"مكسرات وفواكه فاخرة — توريد عالمي",
-            view_products:"مشاهدة المنتجات",get_quote:"طلب عرض سعر",
-            
-            services_title:"خدماتنا ومعايير الجودة لدينا",
-            services_text:"بينما نقدم أطزج وأعلى جودة من المنتجات لعملائنا العالميين، فإننا ندعمكم أيضًا بحلول التوريد واللوجستيات الموثوقة لدينا.",
-            service1_title:"مراقبة جودة فائقة",
-            service1_desc:"يتم اختبار كل دفعة بدقة وفقًا للمعايير الدولية (HACCP، ISO، إلخ) ولا يتم شحن إلا الأفضل. التزامنا بالجودة هو أولويتنا القصوى.",
-            service2_title:"لوجستيات سريعة وموثوقة",
-            service2_desc:"بفضل شبكتنا اللوجستية العالمية الواسعة، نقوم بتوصيل منتجاتكم إلى بابكم بطزاجة الحصاد وفي الوقت المحدد. ضمان سلسلة التبريد.",
-            service3_title:"توريد يركز على العميل",
-            service3_desc:"نقدم حلولاً مرنة للطلبات ذات الحجم الكبير والصغير. دعم كامل بخيارات تغليف ووضع علامات مخصصة تناسب احتياجات العملاء.",
-            service4_title:"تتبع رقمي",
-            service4_desc:"القدرة على تتبع سلسلة التوريد بأكملها رقميًا من المزرعة إلى ميناء الشحن. ضمان الشفافية والأمان.",
-
-            about_title:"من نحن",
-            about_text:"تبنت شركتنا نهج الزراعة المستدامة، وتقوم بإنتاج الفواكه الجافة والطازجة في الوادي الأوسط في تشيلي لأكثر من 15 عامًا. نقوم بزراعة ومعالجة مجموعة واسعة من المنتجات باستخدام الأساليب الحديثة، بما في ذلك الجوز، واللوز، والخوخ، والتفاح، والأفوكادو، والكيوي، والعنب، والزبيب، ومختلف الفواكه المجففة. بفضل الخصوبة الطبيعية للمنطقة، والظروف المناخية الملائمة، والعمل الدؤوب لفريقنا المتخصص، نقدم منتجاتنا للسوق العالمي بمعايير جودة موثوقة. تمشياً مع فلسفتنا الإنتاجية الصديقة للبيئة، نلتزم بمبادئ الممارسات الزراعية الجيدة (BPA) ونطبق المعايير الدولية بصرامة للحفاظ على أعلى مستوى من سلامة الأغذية. الجودة، والاستدامة، والموثوقية هي قيمنا الأساسية في كل مرحلة من مراحل الإنتاج.",
-            sustain:"زراعة مستدامة",
-            s_desc:"نحن نهدف إلى ترك إرث أكثر خضرة للأجيال القادمة من خلال حماية البيئة والالتزام بمبادئ الإنتاج الأخلاقي.",
-
-            products_title:"محفظة المكسرات والفواكه المجففة والفواكه الطازجة الفاخرة",
-            products_text:"مجموعتنا المختارة من منتجات الحصاد التشيلي، المقدمة بضمان الجودة العالية والمذاق الفائق والمعيار الدولي. تشتمل محفظتنا على فواكه طازجة (غير مجففة) بالإضافة إلى المكسرات.",
-
-            p1_name:"جوز شاندلر (بالقشر)",p1_caliber:"العيار: 32 مم+",p1_desc:"الوصف: النوع التجاري الأكثر شعبية بلب فاتح اللون وقشرة رقيقة.",
-            p2_name:"جوز سير (بالقشر)",p2_caliber:"العيار: 30-34 مم",p2_desc:"الوصف: جوز ذو محتوى زيتي عالٍ، نكهة عميقة، وقشرة متينة.",
-            p3_name:"تفاح رويال جالا",p3_caliber:"العيار: 150-175 وحدة/صندوق",p3_desc:"الوصف: حلو، وعصيري، ولون أحمر-أصفر نابض بالحياة، مثالي للاستهلاك الطازج.",
-            p4_name:"زبيب أوتمن رويال",p4_caliber:"العيار: جامبو",p4_desc:"الوصف: زبيب كبير الحبة، داكن اللون وحلو، مجفف طبيعياً تحت الشمس.",
-            p5_name:"زبيب زافيرو",p5_caliber:"العيار: كبير",p5_desc:"الوصف: زبيب بدون بذور، أقل حلاوة وذو ملمس أكثر ليونة، مناسب للاستخدامات المتعددة.",
-            p6_name:"لوز تشيلي (مقشر)",p6_caliber:"العيار: 18/20",p6_desc:"الوصف: لوز مقشر عالي الجودة وغني بالبروتين، متوفر على شكل حبات كاملة وأنصاف.",
-            p7_name:"كرز تشيلي (طازج)",p7_caliber:"العيار: J (26-28mm)",p7_desc:"الوصف: كرز أحمر داكن، ذو قوام صلب ومقرمش، يُزرع خصيصاً للتصدير الطازج.",
-
-            contact_title:"تواصل معنا",phone:"الهاتف:",email:"البريد الإلكتروني:",
-            quote:"اطلب عرض سعر",reply:"تواصل معنا للحصول على معلومات حول سلسلة التوريد العالمية لدينا ولعروضك الخاصة. سيعود فريقنا إليك في غضون 24 ساعة."
-        }
-    };
-
-    /* Dil Uygulama Fonksiyonu */
-    function applyLang(){
-        const L = localStorage.getItem('site-lang') || 'tr';
-        // Arapça için RTL yönünü ayarla
-        document.documentElement.dir = (L==='ar') ? 'rtl' : 'ltr';
-        // Tüm veri-dil niteliklerini çevir
-        document.querySelectorAll('[data-lang]').forEach(el=>{
-            const key = el.getAttribute('data-lang');
-            if(key && translations[L] && translations[L][key] !== undefined){
-                el.innerHTML = translations[L][key];
-            }
-        });
-        
-        // Aktif dil düğmesini seçili yap (Mobil ve Masaüstü için)
-        document.querySelectorAll('[data-lang-code]').forEach(b=> b.classList.toggle('sel', b.getAttribute('data-lang-code')===L));
-        
-        // Masaüstü dil kısaltmalarını güncelle
-        document.querySelector('.lang-desktop button[data-lang-code="tr"]').textContent = (L === 'tr') ? 'TR' : 'TR';
-        document.querySelector('.lang-desktop button[data-lang-code="en"]').textContent = (L === 'en') ? 'EN' : 'EN';
-        document.querySelector('.lang-desktop button[data-lang-code="es"]').textContent = (L === 'es') ? 'ES' : 'ES';
-        document.querySelector('.lang-desktop button[data-lang-code="ar"]').textContent = (L === 'ar') ? 'AR' : 'AR';
-    }
-    
-    /* Yeni Dil Ayarlama Fonksiyonu */
-    function setLang(code){ 
-        localStorage.setItem('site-lang', code); 
-        applyLang(); 
-        // Dizin değiştiğinde animasyonları RTL/LTR için yeniden konumlandırmak gerekebilir
-        initReveal(); 
-    }
-    
-    /* DOM Yüklendiğinde Dinleyicileri Kurma ve Dili Uygulama */
-    document.addEventListener('DOMContentLoaded', ()=>{
-        // Dil değiştirme düğmelerine tıklama dinleyicilerini ekle (Mobil ve Masaüstü)
-        document.querySelectorAll('[data-lang-code]').forEach(b=>{
-            b.addEventListener('click', ()=> setLang(b.getAttribute('data-lang-code')));
-        });
-        document.querySelectorAll('.panel a, #deskNav a').forEach(a=>{
-             // Navigasyon bağlantılarının go fonksiyonunu kullanmasını sağla
-             a.addEventListener('click', (e) => {
-                 e.preventDefault();
-                 const id = a.getAttribute('href').substring(1);
-                 go(id);
-             }); 
-        });
-
-        applyLang();
-    });
-</script>
-</body>
-</html>
-
-11 Ara 2025 Per 14:26 tarihinde Ertan Ertaş <ertanertas33@gmail.com> şunu yazdı:
-<!doctype html>
-<html lang="tr">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Atlantic Nuts — Premium Kuruyemiş | Global Tedarik</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;800&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-    <style>
-        /* CSS Değişkenleri (Renkler, Boyutlar, Arka Plan) */
-        :root{
-            --accent:#2f8f3b; /* Yeşil vurgu */
-            --dark:#0f1720;
-            --max:1200px;
-            --header-footer-bg: #3E2723; /* Koyu Kahverengi */
-            --header-footer-color: #fff;
-            /* YENİ ARKA PLAN (Ahşap Dokusu) */
-            --wood-texture-url: url('https://raw.githubusercontent.com/vxfch82y59-lab/Atlantik-nuts/refs/heads/main/LDSP%2039%20Dogal%20Hus%20ST%7E2.jpg'); 
-            /* YENİ HERO GÖRSELİ URL'Sİ */
-            --hero-image-url: url('https://raw.githubusercontent.com/vxfch82y59-lab/Atlantik-nuts/refs/heads/main/1765405181914.jpg');
-        }
-        *{margin:0;padding:0;box-sizing:border-box}
-        body{
-            font-family:Inter,system-ui,Arial;
-            /* Yeni Arka Plan Ayarları: Sabit, ortalanmış ve kapsayan */
-            background:var(--wood-texture-url) fixed center/cover; 
-            color:var(--dark);
-            -webkit-font-smoothing:antialiased
-        }
-        .container{max-width:var(--max);margin:0 auto;padding:0 18px}
-
-        /* HEADER */
-        header{
-            position:fixed;left:0;right:0;top:0;height:64px;z-index:50;
-            backdrop-filter:blur(4px);
-            background:var(--header-footer-bg); 
-            color:var(--header-footer-color);
-            display:flex;align-items:center;justify-content:center;
-            border-bottom:1px solid #ffffff18
-        }
-        .h-inner{width:100%;max-width:var(--max);display:flex;align-items:center;justify-content:center;position:relative;padding:0 18px}
-        #hamb{position:absolute;left:18px;border:0;background:transparent;font-size:22px;width:44px;height:44px;cursor:pointer;color:var(--header-footer-color);}
-        .brand{font-weight:800;font-size:18px;color:var(--header-footer-color);}
-        
-        /* LOGO: Yeşil Ağaç İkonu */
-        .brand::before {
-            content: '\1F333'; 
-            color: var(--accent); 
-            font-size: 24px;
-            margin-right: 8px;
-            display: inline-block;
-            vertical-align: middle;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
-        }
-        
-        nav{display:none;gap:16px}
-        nav a{text-decoration:none;color:var(--header-footer-color);font-weight:600;transition:opacity .2s;}
-        nav a:hover{opacity:0.8;}
 
         /* OFFCANVAS (Mobil Menü) */
         .off{position:fixed;inset:0;pointer-events:none;z-index:60}
@@ -1576,6 +755,435 @@
         });
         document.querySelectorAll('.panel a').forEach(a=>{
              a.addEventListener('click', go); 
+        });
+
+        applyLang();
+    });
+</script>
+</body>
+</html>
+
+
+Ertan Ertaş
+11 Ara 2025 14:50 (23 saat önce)
+Alıcı: ben
+
+<!doctype html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Atlantic Nuts — Premium Kuruyemiş | Global Tedarik</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+    <style>
+        /* CSS Değişkenleri (Renkler, Boyutlar, Arka Plan) */
+        :root{
+            --accent:#2f8f3b; /* Yeşil vurgu */
+            --dark:#0f1720;
+            --max:1200px;
+            --header-footer-bg: #3E2723; /* Koyu Kahverengi */
+            --header-footer-color: #fff;
+            /* YENİ ARKA PLAN (Ahşap Dokusu) */
+            --wood-texture-url: url('https://raw.githubusercontent.com/vxfch82y59-lab/Atlantik-nuts/refs/heads/main/LDSP%2039%20Dogal%20Hus%20ST%7E2.jpg'); 
+            /* YENİ HERO GÖRSELİ URL'Sİ */
+            --hero-image-url: url('https://raw.githubusercontent.com/vxfch82y59-lab/Atlantik-nuts/refs/heads/main/1765405181914.jpg');
+        }
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{
+            font-family:Inter,system-ui,Arial;
+            /* Yeni Arka Plan Ayarları: Sabit, ortalanmış ve kapsayan */
+            background:var(--wood-texture-url) fixed center/cover; 
+            color:var(--dark);
+            -webkit-font-smoothing:antialiased
+        }
+        .container{max-width:var(--max);margin:0 auto;padding:0 18px}
+
+        /* HEADER */
+        header{
+            position:fixed;left:0;right:0;top:0;height:64px;z-index:50;
+            backdrop-filter:blur(4px);
+            background:var(--header-footer-bg); 
+            color:var(--header-footer-color);
+            display:flex;align-items:center;justify-content:center;
+            border-bottom:1px solid #ffffff18
+        }
+        .h-inner{width:100%;max-width:var(--max);display:flex;align-items:center;justify-content:center;position:relative;padding:0 18px}
+        #hamb{position:absolute;left:18px;border:0;background:transparent;font-size:22px;width:44px;height:44px;cursor:pointer;color:var(--header-footer-color);}
+        .brand{font-weight:800;font-size:18px;color:var(--header-footer-color);}
+        
+        /* LOGO: Yeşil Ağaç İkonu */
+        .brand::before {
+            content: '\1F333'; 
+            color: var(--accent); 
+            font-size: 24px;
+            margin-right: 8px;
+            display: inline-block;
+            vertical-align: middle;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+        }
+        
+        nav{display:none;gap:16px}
+        nav a{text-decoration:none;color:var(--header-footer-color);font-weight:600;transition:opacity .2s;}
+        nav a:hover{opacity:0.8;}
+        
+        /* MASAÜSTÜ DİL SEÇİMİ BUTONLARI İÇİN STİL (YENİ) */
+        .lang-desktop{
+            display: none; /* Mobil'de gizli */
+            position: absolute;
+            right: 18px;
+            gap: 5px;
+            align-items: center;
+        }
+        .lang-desktop button{
+            padding: 4px 8px;
+            background: transparent;
+            border: 1px solid #ffffff33;
+            border-radius: 4px;
+            color: #fff;
+            cursor: pointer;
+            font-size: 13px;
+            transition: background .2s, border-color .2s;
+        }
+        .lang-desktop button.sel{
+            nav{display:flex;position:relative; right:unset;} /* Navigasyonu ortadan sağa kaydırdık, dil seçimi için yer açtık */
+            #hamb{display:none}
+            .hero{max-height: 800px; border-radius: 0;}
+            .hero-content h1 {font-size: 60px;}
+            .section{padding:100px 0;}
+            
+            /* MASAÜSTÜ DİL SEÇİMİ GÖRÜNÜR OLSUN (YENİ) */
+            .lang-desktop{display: flex;} 
+            
+            /* Sürdürülebilir tarım ve Dijital İzlenebilirlik görsellerini masaüstünde kare yapmak (260x260) */
+            #about .card .sustain-img,
+            #services .card .service-img-container {
+                width: 260px; 
+                height: 260px;
+                border-radius: 8px; 
+            }
+            /* Ürün görsellerini masaüstünde kare yapmak (280x280) */
+            .circle{
+                 width:280px; 
+                 height:280px; 
+            }
+        }
+        /* Arapça (RTL) Düzeltmeler */
+        [dir="rtl"] #hamb{left:unset; right:18px;}
+        [dir="rtl"] .lang-desktop{right:unset; left:18px;} /* RTL'de dil seçimi sola gider */
+        [dir="rtl"] nav{right:unset; left:calc(18px + 170px); position: absolute;} /* RTL'de navigasyonu kaydırdık */
+        [dir="rtl"] .panel{left:unset; right:0; transform:translateX(100%);}
+        [dir="rtl"] .off.show .panel{transform:none}
+        [dir="rtl"] .brand::before {margin-right: unset; margin-left: 8px;}
+        [dir="rtl"] #offTitle::before {margin-right: unset; margin-left: 8px;}
+        [dir="rtl"] .card h4, [dir="rtl"] .card span {text-align: right;}
+        [dir="rtl"] .card p {text-align: right;}
+        [dir="rtl"] .card h5 {text-align: right;}
+        [dir="rtl"] #services .card {transform: translateX(50px);}
+    </style>
+</head>
+<body>
+<header>
+    <div class="h-inner container">
+        <button id="hamb" aria-label="Açılır menü">☰</button>
+        <div class="brand">ATLANTIC NUTS</div>
+        
+        <nav id="deskNav">
+            <a data-lang="home" href="#home" onclick="go('home')"></a>
+            <a data-lang="about" href="#about-intro" onclick="go('about-intro')"></a>
+            <a data-lang="services" href="#services" onclick="go('services')"></a>
+            <a data-lang="products" href="#products" onclick="go('products')"></a>
+            <a data-lang="contact" href="#contact" onclick="go('contact')"></a>
+        </nav>
+        
+        <div class="lang-desktop" id="desktopLangs">
+             <button data-lang-code="tr">TR</button>
+             <button data-lang-code="en">EN</button>
+             <button data-lang-code="es">ES</button>
+             <button data-lang-code="ar">AR</button>
+        </div>
+    </div>
+</header>
+
+<div class="off" id="off">
+    <div class="bg" id="bg"></div>
+    <aside class="panel" role="dialog" aria-modal="true" aria-labelledby="offTitle">
+        <h3 id="offTitle" style="color:#fff;margin:0 0 18px; border-bottom:1px solid #ffffff22; padding-bottom:12px;">ATLANTIC NUTS</h3>
+        <a data-lang="home" onclick="go('home')" href="#home"></a>
+        <a data-lang="about" onclick="go('about-intro')" href="#about-intro"></a>
+        <a data-lang="services" onclick="go('services')" href="#services"></a> 
+        <a data-lang="products" onclick="go('products')" href="#products"></a>
+        <a data-lang="contact" onclick="go('contact')" href="#contact"></a>
+        
+        <div class="langs" style="margin-top:24px; padding-top:12px; border-top:1px solid #ffffff22;">
+            <button data-lang-code="tr">Türkçe</button>
+            <button data-lang-code="en">English</button>
+            <button data-lang-code="es">Español</button>
+            <button data-lang-code="ar">العربية</button>
+        </div>
+    </aside>
+</div>
+
+<section id="home" class="hero">
+    <div class="container hero-content">
+        <h1 data-lang="hero_title"></h1>
+        <p data-lang="hero_sub"></p>
+        <div class="hero-buttons">
+            <a data-lang="view_products" onclick="go('products')" href="#products" class="hero-reveal"></a>
+            <a data-lang="get_quote" onclick="go('contact')" href="#contact" class="hero-reveal"></a>
+        </div>
+    </div>
+</section>
+
+<section id="about-intro" class="section">
+    <div class="container">
+        <h2 class="title" data-lang="about_title"></h2>
+        <p class="lead" data-lang="about_text"></p>
+    </div>
+</section>
+
+<section id="services" class="section">
+    <div class="container">
+        <h2 class="title" data-lang="services_title"></h2>
+        <p class="lead" data-lang="services_text"></p>
+        <div class="grid">
+            
+            <div class="card reveal-side" data-delay="0.1">
+                <img src="https://raw.githubusercontent.com/vxfch82y59-lab/Atlantik-nuts/refs/heads/main/1765332830761.jpg" alt="Üstün Kalite Kontrolü" style="width:100%; max-width: 280px; height:auto; border-radius:8px; margin-bottom:10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                <h4 data-lang="service1_title"></h4>
+                <p data-lang="service1_desc"></p>
+            </div>
+
+            <div class="card reveal-side service2_card" data-delay="0.2">
+                <img src="https://raw.githubusercontent.com/vxfch82y59-lab/Atlantik-nuts/refs/heads/main/1000003189-removebg-preview.png" alt="Hızlı ve Güvenilir Lojistik" style="width:100%; max-width: 280px; height:auto; border-radius:8px; margin-bottom:10px; box-shadow: none;">
+                <h4 data-lang="service2_title"></h4>
+                <p data-lang="service2_desc"></p>
+            </div>
+
+            <div class="card reveal-side" data-delay="0.3">
+                <img src="https://raw.githubusercontent.com/vxfch82y59-lab/Atlantik-nuts/refs/heads/main/1765331681257.jpg" alt="Müşteri Odaklı Tedarik ve Destek" style="width:100%; max-width: 280px; height:auto; border-radius:8px; margin-bottom:10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                <h4 data-lang="service3_title"></h4>
+                <p data-lang="service3_desc"></p>
+            </div>
+            
+            <div class="card reveal-side" data-delay="0.4">
+                <div class="service-img-container" style="background-image:url('https://raw.githubusercontent.com/vxfch82y59-lab/Atlantik-nuts/refs/heads/main/1765420512952%7E2.jpg');"></div>
+                <h4 data-lang="service4_title"></h4>
+                <p data-lang="service4_desc"></p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="about" class="section">
+    <div class="container">
+        <div class="grid">
+            
+            <div class="card reveal">
+                 <div class="sustain-img" style="background-image:url('https://raw.githubusercontent.com/vxfch82y59-lab/Atlantik-nuts/refs/heads/main/IMG-20251209-WA0010.jpg')"></div>
+                <h4 data-lang="sustain"></h4>
+                <p data-lang="s_desc"></p>
+            </div>
+            </div>
+    </div>
+</section>
+
+<section id="products" class="section">
+    <div class="container">
+        <h2 class="title" data-lang="products_title"></h2>
+        <p class="lead" data-lang="products_text"></p>
+        <div class="grid">
+
+            <div class="card reveal">
+                <div class="circle" style="background-image:url('https://raw.githubusercontent.com/vxfch82y59-lab/Atlantik-nuts/refs/heads/main/IMG-20251209-WA0013.jpg')"></div>
+                <h4 data-lang="p1_name"></h4> 
+                <h5 data-lang="p1_caliber"></h5> 
+                <p data-lang="p1_desc"></p>
+            </div>
+
+            <div class="card reveal">
+                <div class="circle" style="background-image:url('https://raw.githubusercontent.com/vxfch82y59-lab/Atlantik-nuts/refs/heads/main/Screenshot_20251210_215111_Photos.jpg')"></div>
+                <h4 data-lang="p2_name"></h4>
+                 <h5 data-lang="p2_caliber"></h5>
+                <p data-lang="p2_desc"></p>
+            </div>
+
+            <div class="card reveal">
+                <div class="circle" style="background-image:url('https://raw.githubusercontent.com/vxfch82y59-lab/Atlantik-nuts/refs/heads/main/IMG-20251209-WA0002.jpg')"></div>
+                <h4 data-lang="p3_name"></h4>
+                 <h5 data-lang="p3_caliber"></h5>
+                <p data-lang="p3_desc"></p>
+            </div>
+
+            <div class="card reveal">
+                <div class="circle" style="background-image:url('https://raw.githubusercontent.com/vxfch82y59-lab/Atlantik-nuts/refs/heads/main/IMG_6861.jpeg')"></div>
+                <h4 data-lang="p4_name"></h4>
+                 <h5 data-lang="p4_caliber"></h5>
+                <p data-lang="p4_desc"></p>
+            </div>
+
+            <div class="card reveal">
+                <div class="circle" style="background-image:url('https://raw.githubusercontent.com/vxfch82y59-lab/Atlantik-nuts/refs/heads/main/Screenshot_20251210_135512_Gallery.jpg')"></div>
+                <h4 data-lang="p5_name"></h4>
+                 <h5 data-lang="p5_caliber"></h5>
+                <p data-lang="p5_desc"></p>
+            </div>
+            
+            <div class="card reveal">
+                <div class="circle" style="background-image:url('https://raw.githubusercontent.com/vxfch82y59-lab/Atlantik-nuts/refs/heads/main/71AvTfOBMBc4IstjrzEFq9NiISuWSJcQCIiy3WB5.jpg')"></div>
+                <h4 data-lang="p6_name"></h4>
+                 <h5 data-lang="p6_caliber"></h5>
+                <p data-lang="p6_desc"></p>
+            </div>
+
+            <div class="card reveal">
+                <div class="circle" style="background-image:url('https://raw.githubusercontent.com/vxfch82y59-lab/Atlantik-nuts/refs/heads/main/Screenshot_20251210_215148_Photos.jpg')"></div>
+                <h4 data-lang="p7_name"></h4>
+                 <h5 data-lang="p7_caliber"></h5>
+                <p data-lang="p7_desc"></p>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="section">
+    <div class="container">
+        <h2 class="title" data-lang="contact_title"></h2>
+        <div class="grid">
+            <div class="card reveal contact-info">
+                <p><strong data-lang="phone"></strong> +56 9 1234 689</p>
+                <p><strong data-lang="whatsapp"></strong> +56 9 1234 689</p>
+                <p><strong data-lang="email"></strong> ask@atlantiknuts.com</p>
+                <p><strong data-lang="location"></strong> Vitacura, Santiago, Chile</p>
+            </div>
+             <div class="card reveal">
+                <h4 data-lang="quote"></h4>
+                <p data-lang="reply"></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    © <span id="year"></span> Atlantic Nuts
+</footer>
+
+<script>
+    /* Yılın Otomatik Olarak Güncellenmesi */
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    /* MENU open/close (toggle) */
+    const off = document.getElementById('off');
+    const hamb = document.getElementById('hamb');
+    const bg = document.getElementById('bg');
+
+    function toggleMenu(){
+        off.classList.toggle('show');
+        // Menü açıkken sayfanın kaymasını engelle
+        document.documentElement.style.overflow = off.classList.contains('show') ? 'hidden' : '';
+    }
+    hamb.addEventListener('click', toggleMenu);
+    // Arka plana tıklama veya ESC tuşu ile menüyü kapatma
+    bg.addEventListener('click', ()=>{ off.classList.remove('show'); document.documentElement.style.overflow=''; });
+    window.addEventListener('keydown', e=>{ if(e.key === 'Escape') { off.classList.remove('show'); document.documentElement.style.overflow=''; } });
+
+    /* REVEAL (GSAP ScrollTrigger ile animasyon) */
+    function initReveal(){
+        if(typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined'){
+            gsap.registerPlugin(ScrollTrigger);
+            
+            // Hero Yazıları Animasyonu
+            gsap.fromTo('.hero-content h1', {opacity:0, y:-20}, {opacity:1, y:0, duration: 1.2, ease: 'power3.out', delay: 0.3});
+            gsap.fromTo('.hero-content p', {opacity:0, y:20}, {opacity:1, y:0, duration: 1.2, ease: 'power3.out', delay: 0.5});
+            gsap.fromTo('.hero-buttons a', {opacity:0, scale: 0.8}, {opacity:1, scale: 1, duration: 0.8, ease: 'back.out(1.7)', stagger: 0.1, delay: 0.8});
+
+            // Kart Animasyonları (Alttan Geliş)
+            gsap.utils.toArray('.reveal').forEach(el=>{
+                gsap.fromTo(el, {opacity:0, y:50}, {
+                    opacity:1, 
+                    y:0, 
+                    duration:1.0, 
+                    ease:'power3.out', 
+                    scrollTrigger:{ trigger:el, start:'top 90%' }
+                });
+            });
+            
+            // Yandan Gelişli Kart Animasyonları (Hizmetler)
+            gsap.utils.toArray('.reveal-side').forEach(el=>{
+                const isRTL = document.documentElement.dir === 'rtl';
+                const startX = isRTL ? 50 : -50;
+                const delay = parseFloat(el.getAttribute('data-delay') || 0);
+
+                gsap.fromTo(el, {opacity:0, x:startX}, {
+                    opacity:1, 
+                    x:0, 
+                    duration:1.0, 
+                    delay: delay, 
+                    ease:'power3.out', 
+                    scrollTrigger:{ trigger:el, start:'top 90%' }
+                });
+            });
+            
+        } else {
+            // GSAP/ScrollTrigger yoksa basit görünürlük takibi (fallback)
+            const io = new IntersectionObserver((entries, o)=>{
+                entries.forEach(en=>{ 
+                    if(en.isIntersecting){ 
+                        en.target.style.opacity = '1';
+                        en.target.style.transform = 'translateY(0) translateX(0)';
+                        en.target.style.transition = 'opacity 1s, transform 1s'; 
+                        o.unobserve(en.target); 
+                    }
+                });
+            }, {threshold: .12});
+            document.querySelectorAll('.reveal, .reveal-side, .hero-content h1, .hero-content p, .hero-buttons a').forEach(el=>io.observe(el));
+            document.querySelectorAll('.hero-content h1, .hero-content p, .hero-buttons a').forEach(el=>{
+                el.style.opacity = '0';
+            });
+        }
+    }
+    window.addEventListener('load', initReveal);
+
+    /* SMOOTH SCROLL helper (Navigasyon ve düğmeler için) */
+    function go(id){
+        const el = document.getElementById(id);
+        if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+        // Sadece mobil menü açıkken menüyü kapat
+        if(window.innerWidth < 900 && off.classList.contains('show')) { 
+        // Aktif dil düğmesini seçili yap (Mobil ve Masaüstü için)
+        document.querySelectorAll('[data-lang-code]').forEach(b=> b.classList.toggle('sel', b.getAttribute('data-lang-code')===L));
+        
+        // Masaüstü dil kısaltmalarını güncelle
+        document.querySelector('.lang-desktop button[data-lang-code="tr"]').textContent = (L === 'tr') ? 'TR' : 'TR';
+        document.querySelector('.lang-desktop button[data-lang-code="en"]').textContent = (L === 'en') ? 'EN' : 'EN';
+        document.querySelector('.lang-desktop button[data-lang-code="es"]').textContent = (L === 'es') ? 'ES' : 'ES';
+        document.querySelector('.lang-desktop button[data-lang-code="ar"]').textContent = (L === 'ar') ? 'AR' : 'AR';
+    }
+    
+    /* Yeni Dil Ayarlama Fonksiyonu */
+    function setLang(code){ 
+        localStorage.setItem('site-lang', code); 
+        applyLang(); 
+        // Dizin değiştiğinde animasyonları RTL/LTR için yeniden konumlandırmak gerekebilir
+        initReveal(); 
+    }
+    
+    /* DOM Yüklendiğinde Dinleyicileri Kurma ve Dili Uygulama */
+    document.addEventListener('DOMContentLoaded', ()=>{
+        // Dil değiştirme düğmelerine tıklama dinleyicilerini ekle (Mobil ve Masaüstü)
+        document.querySelectorAll('[data-lang-code]').forEach(b=>{
+            b.addEventListener('click', ()=> setLang(b.getAttribute('data-lang-code')));
+        });
+        document.querySelectorAll('.panel a, #deskNav a').forEach(a=>{
+             // Navigasyon bağlantılarının go fonksiyonunu kullanmasını sağla
+             a.addEventListener('click', (e) => {
+                 e.preventDefault();
+                 const id = a.getAttribute('href').substring(1);
+                 go(id);
+             }); 
         });
 
         applyLang();
